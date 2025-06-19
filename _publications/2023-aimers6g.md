@@ -1,7 +1,7 @@
 ---
 title: "AImers-6G: AI-Driven Region-Temporal Resource Provisioning for 6G Immersive Services"
 collection: publications
-category: journal
+category: manuscripts
 permalink: /publications/2023-aimers6g
 excerpt: 'This paper proposes AImers-6G, an AI-empowered framework for efficient and secure resource provisioning in 6G immersive service environments using context-immersive learning and blockchain-based auctions.'
 date: 2023-06-13
