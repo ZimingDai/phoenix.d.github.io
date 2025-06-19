@@ -1,14 +1,13 @@
 ---
-title: "Paper Title Number 1"
+title: "MG²FL: Multi-Granularity Grouping-Based Federated Learning in Green Edge Computing Systems"
 collection: publications
-category: manuscripts
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-bibtexurl: 'http://academicpages.github.io/files/bibtex1.bib'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+category: conference
+permalink: /publication/2023-mg2fl
+excerpt: 'This paper proposes MG²FL, a communication- and energy-efficient federated learning framework that groups clients by multi-granularity similarity in green edge environments.'
+date: 2023-12-04
+venue: 'IEEE GLOBECOM 2023'
+paperurl: 'https://phoenixdai.cn/files/MG2FL_Multi-Granularity_Grouping-Based_Federated_Learning_in_Green_Edge_Computing_Systems.pdf'  # 替换为实际链接
+slidesurl: 'https://phoenixdai.cn/files/slides-MG2FL'  # 可选
+citation: 'Dai, Ziming, et al. "MG 2 FL: Multi-Granularity Grouping-Based Federated Learning in Green Edge Computing Systems." GLOBECOM 2023-2023 IEEE Global Communications Conference. IEEE, 2023.'
 ---
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+We propose MG²FL, a novel client grouping strategy for federated learning under green edge environments. The approach leverages semantic and statistical client profiles to reduce energy and communication costs while preserving performance.

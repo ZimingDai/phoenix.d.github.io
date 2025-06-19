@@ -11,7 +11,7 @@ redirect_from:
 
 🎓 I received my **Bachelor of Engineering** in **Artificial Intelligence** from **Tianjin University** in **2019–2023**, where my undergraduate thesis on *blockchain-based group federated learning* was awarded as an **Outstanding Graduation Thesis**. Currently, I am pursuing my **Master of Engineering** in **Electronic and Information Engineering** at the same institution, expected to graduate in **2026**.
 
-💼 In the summer of 2022, I interned as an **Algorithm Engineer** at **Beijing Wenge Technology Co., Ltd.**, where I led a team focused on **Named Entity Recognition (NER)** in low-resource languages, coordinating efforts across model pretraining and linguistic enhancement modules.
+💼 In the summer of 2022, I interned as an **Algorithm Engineer** at **Beijing Wenge Technology Co., Ltd.**, where I joint a team focused on **Named Entity Recognition (NER)** in low-resource languages, coordinating efforts across model pretraining and linguistic enhancement modules.
 
 💡 My research centers on **federated learning**, **edge intelligence**, and **large language model (LLM) personalization**. I’m especially interested in enabling LLMs to adapt to local contexts by efficiently leveraging private data in decentralized, resource-constrained environments.
 
