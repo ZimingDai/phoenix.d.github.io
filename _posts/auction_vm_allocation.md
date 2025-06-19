@@ -1,11 +1,10 @@
 ---
-title: "Auction-Based VM Allocation Mechanism (Translated)"
+title: "Handscript of 《Auction-Based VM Allocation...》"
 date: 2022-05-02
 tags:
    - top papers
-permalink: /blog/auction-based-vm-allocation/
+permalink: /posts/auction-based-vm-allocation/
 ---
-
 
 > Gao, Guoju, et al. "Auction-based VM allocation for deadline-sensitive tasks in distributed edge cloud." *IEEE Transactions on Services Computing* (2019).
 
