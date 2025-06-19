@@ -25,4 +25,7 @@ redirect_from:
 
 🚀 I'm currently exploring how to combine LLMs with edge devices through efficient distillation and distributed learning — making intelligence more **personal, private, and practical**.
 
-🛠 Feel free to check out my [blog](https://zimingdai.github.io/), [Google Scholar](https://scholar.google.com/citations?user=6jFThhoAAAAJ&hl=en), or reach out if you’d like to connect!
+📄 You can view or download my latest CV here:  
+👉 :[Ziming Dai's Curriculum Vitae](../assets/CV_Ziming Dai.pdf).
+
+🛠 Feel free to check out my [blog](https://zimingdai.github.io/), or reach out if you’d like to connect!
