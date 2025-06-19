@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-👋 Hi there! I'm **Ziming Dai (戴子明)**, a second-year Master's student in the College of Intelligence and Computing at **Tianjin University** 🇨🇳. I'm currently working under the guidance of Prof. **Xiaofei Wang** and Prof. **Chao Qiu**.
+👋 Hi there! I'm **Ziming Dai (戴子明)**, a second-year Master's student in the College of Intelligence and Computing at **Tianjin University** 🇨🇳. I currently conduct research at the [Edge Big Bang Lab](http://www.drxiaofei.wang/), under the supervision of [Prof. Xiaofei Wang](https://cic.tju.edu.cn/faculty/wangxiaofei/index.html) and [Prof. Chao Qiu](http://qiuchao.fei8s.com/).
 
 💡 My research focuses on **federated learning**, **edge intelligence**, and **large language model (LLM) personalization**. I'm especially interested in enabling LLMs to adapt to local environments — using private data efficiently, securely, and with low energy cost.
 
