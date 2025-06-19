@@ -7,7 +7,7 @@ excerpt: 'This paper proposes AIME, a model evolution-based inference framework 
 date: 2025-03-31
 venue: 'IEEE ICDCS'
 # paperurl: 'https://doi.org/10.1109/ICDCS59710.2025.00487'
-citation: 'Ziming Dai, Yunfeng Zhao, Yuxuan Wang, Jinhui Xu, Jinhang Song, Chao Qiu, and Salman Avestimehr. "AIME: Adaptive Inference with Model Evolution for Efficient On-Device Large Language Model Serving." IEEE ICDCS 2025.'
+citation: '<strong>Ziming Dai</strong>, Yunfeng Zhao, Yuxuan Wang, Jinhui Xu, Jinhang Song, Chao Qiu, and Salman Avestimehr. "AIME: Adaptive Inference with Model Evolution for Efficient On-Device Large Language Model Serving." IEEE ICDCS 2025.'
 ---
 
 In this work, we propose **ACME**, an adaptive model customization framework designed to deploy large Transformer-based models efficiently across heterogeneous devices in distributed systems. ACME addresses critical issues such as performance imbalances, energy inefficiency, and privacy concerns when deploying pre-trained models like ViT and BERT at the edge.

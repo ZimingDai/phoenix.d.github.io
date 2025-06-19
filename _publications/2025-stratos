@@ -7,7 +7,7 @@ excerpt: 'This paper presents Stratos, a comprehensive and automated pipeline fo
 date: 2025-03-22
 venue: 'NaN'
 # paperurl: 'https://api.semanticscholar.org/CorpusID:266044196'
-# citation: 'Anonymous. "Stratos: An End-to-End Distillation Pipeline for Customized LLMs under Distributed Cloud Environments." Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2025).'
+citation: '<strong>Ziming Dai</strong> "Stratos: An End-to-End Distillation Pipeline for Customized LLMs under Distributed Cloud Environments"'
 ---
 
 In this work, we introduce **Stratos**, a fully automated end-to-end LLM distillation and deployment pipeline tailored for distributed cloud environments. Stratos dynamically selects optimal teacher-student model pairs and matches them with appropriate cloud servers based on user-defined performance and budget constraints.

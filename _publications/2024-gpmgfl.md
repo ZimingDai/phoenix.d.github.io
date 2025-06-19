@@ -7,7 +7,7 @@ excerpt: 'This paper proposes GP-MGFL, a blockchain-based multi-granularity fede
 date: 2024-11-11
 venue: 'IEEE Transactions on Cloud Computing'
 paperurl: 'https://doi.org/10.1109/TCC.2024.3494765'
-citation: '**Ziming Dai**, Yunfeng Zhao, Chao Qiu, Xiaofei Wang, Haipeng Yao, and Dusit Niyato. "Multi-Granularity Federated Learning by Graph-Partitioning." IEEE Transactions on Cloud Computing (2024).'
+citation: '<strong>Ziming Dai</strong>, Yunfeng Zhao, Chao Qiu, Xiaofei Wang, Haipeng Yao, and Dusit Niyato. "Multi-Granularity Federated Learning by Graph-Partitioning." IEEE Transactions on Cloud Computing (2024).'
 ---
 
 This work introduces **GP-MGFL**, a federated learning framework that leverages **balanced graph partitioning** to group clients based on capability similarity and applies **cross-granularity guidance** to improve local and inter-group model learning. Additionally, a **blockchain-based credit scoring system** is integrated to handle trust management and leader selection during the aggregation process.
