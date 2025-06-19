@@ -1,226 +1,227 @@
 ---
-title: "Handscript of 《Auction-Based VM Allocation...》"
-date: 2022-05-02
+title: 'Handscript of 《Lyapunov-Guided Deep Reinforcement Learning...》'
+date: 2022-05-04
+permalink: /posts/2022/05/lyapunov-guided/
 tags:
-   - top papers
-permalink: /posts/2022/05/auction-based-vm-allocation/
+  - top papers
 ---
 
-> Gao, Guoju, et al. "Auction-based VM allocation for deadline-sensitive tasks in distributed edge cloud." *IEEE Transactions on Services Computing* (2019).
+> Bi, Suzhi, et al. "Lyapunov-guided deep reinforcement learning for stable online computation offloading in mobile-edge computing networks." *IEEE Transactions on Wireless Communications* 20.11 (2021): 7519-7537.
 
-1. We formalize the competitive virtual machine (VM) resource allocation problem for deadline-sensitive tasks in a three-layer edge cloud architecture, and propose an Auction-Based VM Allocation (AVA) mechanism. This mechanism consists mainly of a **greedy winner selection algorithm** and a **payment determination algorithm**.
+Opportunistic computation offloading is an effective method to improve computational performance in mobile-edge computing (MEC) networks under dynamic edge environments.
 
-2. We prove that the winner selection problem in AVA is NP-hard. To tackle this, we first remove the deadline constraints and transform the three-layer edge cloud structure into a two-layer one. Based on this, we propose a greedy winner selection algorithm and further analyze its approximation ratio.
+In this paper, we consider a **multi-user MEC network** with time-varying wireless channels and randomly arriving task data across continuous time frames.
 
-3. We also design a truthful payment determination algorithm and demonstrate that the AVA mechanism satisfies truthfulness, individual rationality, and computational efficiency.
+Specifically, our goal is to design an online computation load algorithm to maximize network processing throughput while ensuring long-term data queue stability and average power constraints. We formulate the problem as a multi-stage stochastic Mixed-Integer Nonlinear Programming (MINLP) problem, which jointly determines binary offloading (i.e., whether each user's task is processed locally or at the edge server) and system resource allocation across time frames.
 
-4. Extensive simulations based on real mobility traces are conducted to evaluate the performance of the proposed AVA mechanism. The results show that AVA not only achieves better social welfare compared to baseline algorithms but also guarantees truthfulness, individual rationality, and computational efficiency.
+To address the temporal coupling of decisions, we propose a novel framework called **LyDROO**, which combines Lyapunov optimization and Deep Reinforcement Learning (DRL).
 
-## Model & Problem Description
+# Background Knowledge
 
-**Three Roles:**
+Generally, edge computing systems adopt two common computation models:
 
-1. ECN (Edge Cloud Node) / CC (Central Cloud)
-2. Platform
-3. Users
+1. Binary: The entire dataset of a task is either processed locally at the wireless device or offloaded entirely to the edge server.
+2. Partial: The dataset can be partitioned for parallel processing on both the device and the edge server.
 
-### Three-Party Interaction
+## Lyapunov
 
-1. When a mobile user wants to rent VM resources to run deadline-sensitive cloud applications, it first generates a request and submits it to the platform. The request includes the user's **maximum tolerable latency (i.e., deadline)**, the amount of required VM resources, and the size of input data.
+> See [Lyapunov Optimization: An Introduction](http://cslabcms.nju.edu.cn/problem_solving/images/c/c0/2018-zhao.pdf)
 
-   We represent the request of user *i* as $r_i = \{T_i, A_i, I_i\}$, where $T_i$, $A_i$, and $I_i$ denote the deadline, total VM resource requirement, and input data volume, respectively. The set of all requests is denoted as $R$.
-   $$
-   r_i = \{T_i, A_i, I_i\}
-   $$
+Lyapunov functions are used to control dynamic systems. The system state at a given time is represented by a **multi-dimensional vector**, and the Lyapunov function is a **non-negative scalar representation** of this state. A common approach is to take the **weighted sum of squares** of all state components.
 
-2. The platform periodically collects the status of each ECN and announces it to the users who have submitted requests. The status includes key parameters such as **VM resource capacity, bandwidth, unit cost of renting VMs, and unit cost for transmitting data to the CC**.
+If the system state trends in an undesired direction, the value of the function increases. By minimizing this function over time, we stabilize the system.
 
-   $$
-   s_j = \{L_j, c_j^v, c_j^t, b_j^{up}, b_j^{down}\}
-   $$
+### Example
 
-   Here, $L_j$ denotes the VM capacity of ECN $j$, $c_j^v$ and $c_j^t$ represent the unit cost of VM usage and data transmission to CC, respectively. $b_j^{up}$ is the bandwidth from ECN to CC, and $b_j^{down}$ is the bandwidth between ECN $j$ and users. The set of all ECNs is denoted $S$. Let $c_0^v$ denote the unit VM cost at the CC, and $c_0^v \ll c_j^v$ for all $s_j$ in $S$.
+Let the random event in the $$t$$-th time slot be $$w(t) = [w_1(t),w_2(t),...,w_n(t)] \in \Omega^n$$, where each $$w$$ is i.i.d. and $$\Omega$$ is the event space. The control decision vector is $$\alpha(t) = [\alpha_1(t),...,\alpha_n(t)] \in A^m$$, where $$A$$ is the action set.
 
-3. Based on the status info, users decide their bidding strategies for each ECN. For a request $r_i$, we use $b_{ij}$ and $v_{ij}$ to represent user *i*'s bid and valuation for ECN $j$, respectively. The set of all bids is denoted as $B$.
-
-   > Note: $b_{ij}$ is the amount the user is willing to pay for reserving ECN resources, while $v_{ij}$ is the true valuation known only to the user. Users may strategically misreport $b_{ij}$, so the model must be designed to ensure incentive compatibility.
-
-4. The platform determines the auction winners based on all received bids and requests, schedules the selected users accordingly, and calculates the corresponding payments.
-
-   > Notes:
-   > - Each request is assigned to only one ECN.
-   > - An ECN may serve multiple requests under deadline and capacity constraints.
-   > - After winning, an ECN either processes the request itself or uploads it to the CC.
-
-5. The user uploads input data to the ECN for cloud computation and pays accordingly. The ECN may offload tasks to the CC and incur additional costs based on the assignment.
-
-To simplify, we assume each user submits only one request per auction round. If a user has multiple requests, we equivalently treat them as virtual users. Let $d_{ij}$ represent the delay between request $r_i$ and ECN $s_j$, defined as:
+In the $$t$$-th time slot, the target function is:
 $$
-d_{ij} =
-\left\{\begin{aligned}
-&\frac{I_i}{b_j^{down}} & (r_i \to s_j) \\
-&\frac{I_i}{b_j^{down}} + \frac{I_i}{b_j^{up}} & (r_i \to s_j \to CC)
-\end{aligned}\right.
+p(t) = P(w(t),\alpha(t))
 $$
 
-Here, $I_i$ refers to both input and output data. The delay $d_{ij}$ reflects transmission time including the possible relay via CC.
-
-
-### Winner Bidding Selection (WBS) Problem
-
-- We define $\Phi$ as the solution set to the WBS problem, representing the winning bids where $b_{ij} \in \Phi$.
-- $\Phi^E$ is the subset of $\Phi$ where the ECNs can complete the requests independently.
-- $\Phi^C$ is the subset where the requests need to be offloaded to the CC.
-- These two subsets are mutually exclusive and collectively exhaustive: $\Phi^E \cap \Phi^C = \emptyset$ and $\Phi^E \cup \Phi^C = \Phi$.
-
-#### Social Welfare Objective
-
-**Total valuation of winning bids minus the total cost:**
+System variables $$y_k(t)$$ affected by the decision are:
 $$
-\sum_{b_{ij} \in \Phi^E}(v_{ij} - A_i \cdot c_j^v) + \sum_{b_{ij} \in \Phi^C}(v_{ij} - A_i \cdot (c_j^t + c_0^v))
+y_k(t) = Y_k(w(t),\alpha(t))
 $$
 
-- $A_i \cdot c_j^v$: cost for ECN $s_j$ to execute task $r_i$
-- $A_i \cdot (c_j^t + c_0^v)$: cost to offload and execute at the CC
-
-The equivalent optimization can be written as:
+The stochastic optimization problem is:
 $$
-\max \sum_{b_{ij} \in \Phi^E}(b_{ij} - A_i \cdot c_j^v) + \sum_{b_{ij} \in \Phi^C}(b_{ij} - A_i \cdot (c_j^t + c_0^v))
+\min_{\alpha(t)\in A^m} \lim_{T\to \infty} \frac{1}{T} \sum_{t=0}^{T-1} \mathbb{E}[p(t)]
 $$
 
-### Payment Determination (PD) Problem
-
-The PD problem is about determining the payment for each winner such that the auction mechanism satisfies **truthfulness** and **individual rationality**.
-
-#### Truthfulness
-
-Let $p_{ij}(b_{ij})$ be the payment determined by the mechanism.
-
-The utility for truthful bidding is:
 $$
-v_{ij} - p_{ij}(v_{ij})
-$$
-And for untruthful bidding:
-$$
-v_{ij} - p_{ij}(b_{ij})
-$$
-To ensure truthfulness:
-$$
-v_{ij} - p_{ij}(v_{ij}) > v_{ij} - p_{ij}(b_{ij})
+\text{s.t. } \lim_{T\to \infty} \frac{1}{T} \sum_{t=0}^{T-1} \mathbb{E}[y_k(t)] \leq 0
 $$
 
-#### Individual Rationality
-
-A user should not pay more than their valuation:
+We define virtual queues for each constraint $$y_k(t)$$:
 $$
-v_{ij} > p_{ij}(b_{ij})
+Q_k(t+1) = \max\{Q_k(t) + y_k(t), 0\}
 $$
 
-#### Efficiency
-
-Algorithms with computational efficiency are prioritized over those that are optimal but computationally expensive.
-
-## AVA Mechanism
-
-### NP-Hardness Proof
-
-Assume there is only one ECN which cannot offload to the CC. The optimization reduces to:
+From here, we derive:
 $$
-\max \sum_{b_{i1} \in \Phi^E}(b_{i1} - A_i \cdot c_1^v)
-$$
-Subject to:
-$$
-\sum_{b_{i1} \in \Phi^E} A_i < L_1
+\lim_{T \to \infty} \frac{\mathbb{E}[Q_k(T)]}{T} = 0
 $$
 
-This corresponds directly to the 0-1 knapsack problem. Since the simplified case is NP-hard, the general case is also NP-hard.
+This becomes the new constraint.
 
+---
 
-
-### Baseline Solution for the WBS Problem
-
-#### First Phase
-
-Since the transmission delay to CC is always longer than to an ECN, we categorize ECN delay as "good" and CC delay as "bad". Based on the relationship between the deadline $T_i$ and the two delays, we update sets $B$ and $S$.
-
-We remove bids that cannot meet the deadline constraint and introduce virtual ECNs and virtual bids if the deadline exceeds the bad delay. There are three cases:
-
-1. If $ddl < good$, delete the bid because it cannot meet the deadline under any circumstance.
-2. If $good < ddl < bad$, keep the bid unchanged.
-3. If $ddl > bad$, create a virtual ECN ($s_{j*}$) and a virtual bid ($b_{ij*}$):
-   $$
-   s_{j*} = \{L_{j*} = A_i, c_{j*}^v = c_j^t + c_0^v, c_{j*}^t = b_{j*}^{up} = b_{j*}^{down} = 0\}
-   $$
-
-The virtual ECN has exactly the resource needed by request $i$, and its cost is the same as offloading to CC. The virtual bandwidths are all set to zero.
-
-This conversion essentially removes the CC from the edge-cloud hierarchy, reducing it from a three-layer to a two-layer system.
-
-#### Second Phase
-
-We focus on the WBS problem under capacity constraints. The winner selection problem is modeled as a **weighted bipartite matching** with 0-1 knapsack constraints.
-
-We build a graph:
+The Lyapunov function is defined as:
 $$
-G = \{R, \widehat{S}, \varepsilon : \widehat{B}\}
+L(\Theta(t)) = \frac{1}{2} \sum_{k=1}^K Q_k(t)^2
 $$
 
-- $R$ and $\widehat{S}$ are independent node sets.
-- $\varepsilon$ is the set of edges, where each edge represents a bid $<r_i, s_j>$.
-- $\widehat{B}$ is the set of all bids, each corresponding to an edge.
-- Each request's VM demand is the weight (like item weight in knapsack).
-- Each ECN's VM capacity is the knapsack limit.
-- Each edge has a weight:
-  $$
-  w_{ij} = \frac{b_{ij}}{A_i} - c_j^v
-  $$
-
-This represents the gain per unit resource.
-
-Since we already included virtual ECNs and removed CC involvement, we have: $\Phi^C = \emptyset$, $\Phi^E = \Phi$.
-
-The objective function becomes:
+Define the Lyapunov drift as:
 $$
-\max \sum_{b_{ij} \in \Phi} (b_{ij} - A_i \cdot c_j^v)
+\Delta(\Theta(t)) = L(\Theta(t+1)) - L(\Theta(t))
 $$
 
-We apply a greedy algorithm to approximate the maximum matching:
-
-1. If $A_i < L_j$: ECN $j$ has enough capacity.
-   - Add $b_{ij}$ to the final solution $\Phi$.
-   - Remove $r_i$ and all its incident edges from the graph.
-   - Update $L_j = L_j - A_i$
-2. If $A_i > L_j$: remove edge $<r_i, s_j>$ and continue.
-
-Repeat until all vertices and edges are processed. The final $\Phi$ contains all winning bids. Each selected request is scheduled either on ECN or CC as per prior classification.
-
-### Baseline Solution for PD Problem
-
-#### Critical Payment
-
-To ensure truthfulness, the payment $p_{ij}(b_{ij})$ must be the **critical value** — the minimum amount that still guarantees a winning bid.
-
-To compute this, we first identify an alternative winning bid if $b_{ij}$ is removed from the graph.
-
-Steps:
-
-1. Remove edge $<r_i, s_j>$ to construct a new bipartite graph $G_{-ij}$ with updated edges $\varepsilon_{-ij}$.
-2. Recompute the maximum matching to obtain a new solution $\Phi_{-ij}$.
-3. The substitute winning bid must be in $\Phi_{-ij}$.
-
-Two possibilities arise:
-
-1. $r_i$ gets assigned to another ECN $s_{j'}$, then $b_{ij'}$ is the alternative.
-2. $s_j$ has other winning bids like $b_{i_1j}, b_{i_2j}, \dots$
-
-In the second case, we determine the weakest bid that still prevents $r_i$ from being accepted, called $b_{i_{min}j}$:
+We aim to minimize:
 $$
-b_{i_{min}j} = \min \left\{ w_{i_1j}, w_{i_2j}, \dots : L_j - \sum(w_{i_xj} - w_{i_yj}) A_{i_x} \geq A_i \right\}
+\Delta(\Theta(t)) + V \cdot p(t)
 $$
 
-$s_j$ always selects the highest gain requests until it lacks sufficient capacity. Hence, $b_{i_{min}j}$ is the marginal case blocking $r_i$.
+The final expression becomes:
+$$
+\min_{\alpha(t)\in A^m} \mathbb{E}[B + V \cdot p(t) + \sum_{k=1}^K Q_k(t)y_k(t) \mid \Theta(t)]
+$$
 
-Final payment:
+# Model & Problem Formulation
+
+<img src="https://raw.githubusercontent.com/ZimingDai/Picture/main/img/20220504125540.png"/>
+
+We consider a scenario where an edge server (ES) helps $$N$$ wireless devices (WDs) in equal time frames $$T$$.
+
+- $$A_i^t$$: Task arrivals to the queue of WD $$i$$ at time $$t$$. Each $$A_i$$ is i.i.d. with $$\mathbb{E}[(A_i^t)^2] = \eta_i$$.
+- $$h_i^t$$: Channel gain between WD $$i$$ and the ES. Fixed within a time frame, varies across frames.
+- $$D_i^t$$: Bits processed by WD $$i$$ during frame $$t$$.
+- $$x_i^t$$: Offloading decision, 1 for ES, 0 for local.
+
+Local processing:
 $$
-p_{ij}(b_{ij}) = A_i \cdot (c_j^v + \max\{w_{ij'}, w_{i_{min}j}\})
+D_{i,L}^t = f_i^t \cdot \frac{T}{\phi}
 $$
+
+$$
+E_{i,L}^t = \kappa (f_i^t)^2 \cdot T
+$$
+
+Where:
+- $$f_i^t$$: Local CPU frequency
+- $$\phi > 0$$: Number of cycles per bit
+- $$\kappa > 0$$: Energy efficiency coefficient
+
+Offloading:
+$$
+D_{i,O}^t = \frac{W \cdot \tau_i^t T}{v_u} \log_2\left(1 + \frac{E_{i,O}^t h_i^t}{\tau_i^t T N_0}\right)
+$$
+
+$$
+D_i^t = (1 - x) D_{i,L}^t + x D_{i,O}^t
+$$
+
+$$
+E_i^t = (1 - x) E_{i,L}^t + x E_{i,O}^t
+$$
+
+Queue update:
+$$
+Q_i(t+1) = \max\{Q_i(t) - \tilde{D}_i^t + A_i^t, 0\}
+$$
+
+With:
+$$
+\tilde{D}_i^t = \min(Q_i(t), D_i^t)
+$$
+
+If we assume infinite queue capacity:
+$$
+Q_i(t+1) = Q_i(t) - D_i^t + A_i^t
+$$
+
+**By Little's Law, average delay is proportional to average queue length.**
+
+## Problem Formulation
+
+We aim to maximize the **long-term average weighted sum computation rate** for all WDs under queue stability and average power constraints. Decisions are made online at each time frame, without knowing future channel states or task arrivals.
+
+The stochastic MINLP formulation includes:
+
+- $$c_i$$: Fixed weight of WD $$i$$
+- $$r_i^t$$: Processing rate
+
+Constraints:
+- (6a) Offloading time ≤ 1
+- (6b) Causality: processed data ≤ queued data
+- (6c) Average power constraint with threshold $$\gamma_i$$
+- (6d) Queue stability
+
+# Lyapunov-based Decomposition
+
+To handle average power constraints (6c), we define a virtual energy queue:
+$$
+Y_i(t+1) = \max(Y_i(t) + v e_i^t - v \gamma_i, 0)
+$$
+
+Combine queues $$Q$$ and $$Y$$ into a Lyapunov function and compute the drift-plus-penalty:
+$$
+\Lambda(Z(t)) = \Delta L(Z(t)) - V \cdot \sum_{i=1}^N \mathbb{E}[c_i r_i^t \mid Z(t)]
+$$
+
+Then:
+$$
+\Delta L(Q(t)) \leq B_1 + \sum_{i=1}^N Q_i(t) \mathbb{E}[A_i^t - D_i^t \mid Z(t)]
+$$
+
+$$
+\Delta L(Y(t)) \leq B_2 + \sum_{i=1}^N Y_i(t) \mathbb{E}[e_i^t - \gamma_i \mid Z(t)]
+$$
+
+Combine both:
+$$
+\Delta L(Z(t)) \leq \hat{B} + \sum_{i=1}^N Q_i(t) \mathbb{E}[A_i^t - D_i^t \mid Z(t)] + \sum_{i=1}^N Y_i(t) \mathbb{E}[e_i^t - \gamma_i \mid Z(t)]
+$$
+
+Final optimization objective:
+$$
+\sum_{i=1}^N (Q_i(t) + V c_i) r_i^t - \sum_{i=1}^N Y_i(t) e_i^t
+$$
+
+# Lyapunov-Guided DRL
+
+At each time frame, the observation is:
+$$
+\xi^t = \{h_i^t, Q_i(t), Y_i(t)\}_{i=1}^N
+$$
+
+Control decisions:
+$$
+\{x^t, y^t\}
+$$
+
+$$
+y^t = \{\tau_i^t, f_i^t, e_{i,O}^t, r_{i,O}^t\}
+$$
+
+Even though the objective is non-convex, given a fixed $$x$$, it becomes convex. Thus, we use DRL to learn a policy $$\pi$$ to map $$\xi^t$$ to optimal $$x^t$$.
+
+## Actor
+
+Input: $$\xi^t$$ → output: relaxed offloading decisions $$\hat{x}^t \in [0,1]^N$$ using DNN with parameters $$\theta_t$$. Quantized to $$x_j^t \in \{0,1\}^N$$ using nearest thresholding.
+
+### Critic
+
+Evaluate each $$x_j^t$$ in candidate set $$\Omega_t$$ and select:
+$$
+x^t = \arg\max_{x_j^t \in \Omega_t} G(x_j^t, \xi^t)
+$$
+
+## Policy Update
+
+Update actor policy based on critic evaluation.
+
+## Queue Update
+
+After execution, update system queues $$Q$$ and $$Y$$.
