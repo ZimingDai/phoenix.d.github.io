@@ -5,7 +5,7 @@ category: conferences
 permalink: /publications/2025-stratos
 excerpt: 'This paper presents Stratos, a comprehensive and automated pipeline for distilling and deploying customized LLMs across distributed cloud infrastructure, optimizing for performance, cost, and domain-specific task adaptation.'
 date: 2025-03-22
-# venue: 'Arxiv'
+venue: 'NaN'
 # paperurl: 'https://api.semanticscholar.org/CorpusID:266044196'
 # citation: 'Anonymous. "Stratos: An End-to-End Distillation Pipeline for Customized LLMs under Distributed Cloud Environments." Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2025).'
 ---
