@@ -1,0 +1,227 @@
+---
+title: "Auction-Based VM Allocation Mechanism (Translated)"
+date: 2022-05-02
+tags:
+   - top papers
+permalink: /blog/auction-based-vm-allocation/
+---
+
+
+> Gao, Guoju, et al. "Auction-based VM allocation for deadline-sensitive tasks in distributed edge cloud." *IEEE Transactions on Services Computing* (2019).
+
+1. We formalize the competitive virtual machine (VM) resource allocation problem for deadline-sensitive tasks in a three-layer edge cloud architecture, and propose an Auction-Based VM Allocation (AVA) mechanism. This mechanism consists mainly of a **greedy winner selection algorithm** and a **payment determination algorithm**.
+
+2. We prove that the winner selection problem in AVA is NP-hard. To tackle this, we first remove the deadline constraints and transform the three-layer edge cloud structure into a two-layer one. Based on this, we propose a greedy winner selection algorithm and further analyze its approximation ratio.
+
+3. We also design a truthful payment determination algorithm and demonstrate that the AVA mechanism satisfies truthfulness, individual rationality, and computational efficiency.
+
+4. Extensive simulations based on real mobility traces are conducted to evaluate the performance of the proposed AVA mechanism. The results show that AVA not only achieves better social welfare compared to baseline algorithms but also guarantees truthfulness, individual rationality, and computational efficiency.
+
+## Model & Problem Description
+
+**Three Roles:**
+
+1. ECN (Edge Cloud Node) / CC (Central Cloud)
+2. Platform
+3. Users
+
+### Three-Party Interaction
+
+1. When a mobile user wants to rent VM resources to run deadline-sensitive cloud applications, it first generates a request and submits it to the platform. The request includes the user's **maximum tolerable latency (i.e., deadline)**, the amount of required VM resources, and the size of input data.
+
+   We represent the request of user *i* as $r_i = \{T_i, A_i, I_i\}$, where $T_i$, $A_i$, and $I_i$ denote the deadline, total VM resource requirement, and input data volume, respectively. The set of all requests is denoted as $R$.
+   $$
+   r_i = \{T_i, A_i, I_i\}
+   $$
+
+2. The platform periodically collects the status of each ECN and announces it to the users who have submitted requests. The status includes key parameters such as **VM resource capacity, bandwidth, unit cost of renting VMs, and unit cost for transmitting data to the CC**.
+
+   $$
+   s_j = \{L_j, c_j^v, c_j^t, b_j^{up}, b_j^{down}\}
+   $$
+
+   Here, $L_j$ denotes the VM capacity of ECN $j$, $c_j^v$ and $c_j^t$ represent the unit cost of VM usage and data transmission to CC, respectively. $b_j^{up}$ is the bandwidth from ECN to CC, and $b_j^{down}$ is the bandwidth between ECN $j$ and users. The set of all ECNs is denoted $S$. Let $c_0^v$ denote the unit VM cost at the CC, and $c_0^v \ll c_j^v$ for all $s_j$ in $S$.
+
+3. Based on the status info, users decide their bidding strategies for each ECN. For a request $r_i$, we use $b_{ij}$ and $v_{ij}$ to represent user *i*'s bid and valuation for ECN $j$, respectively. The set of all bids is denoted as $B$.
+
+   > Note: $b_{ij}$ is the amount the user is willing to pay for reserving ECN resources, while $v_{ij}$ is the true valuation known only to the user. Users may strategically misreport $b_{ij}$, so the model must be designed to ensure incentive compatibility.
+
+4. The platform determines the auction winners based on all received bids and requests, schedules the selected users accordingly, and calculates the corresponding payments.
+
+   > Notes:
+   > - Each request is assigned to only one ECN.
+   > - An ECN may serve multiple requests under deadline and capacity constraints.
+   > - After winning, an ECN either processes the request itself or uploads it to the CC.
+
+5. The user uploads input data to the ECN for cloud computation and pays accordingly. The ECN may offload tasks to the CC and incur additional costs based on the assignment.
+
+To simplify, we assume each user submits only one request per auction round. If a user has multiple requests, we equivalently treat them as virtual users. Let $d_{ij}$ represent the delay between request $r_i$ and ECN $s_j$, defined as:
+$$
+d_{ij} =
+\left\{\begin{aligned}
+&\frac{I_i}{b_j^{down}} & (r_i \to s_j) \\
+&\frac{I_i}{b_j^{down}} + \frac{I_i}{b_j^{up}} & (r_i \to s_j \to CC)
+\end{aligned}\right.
+$$
+
+Here, $I_i$ refers to both input and output data. The delay $d_{ij}$ reflects transmission time including the possible relay via CC.
+
+
+### Winner Bidding Selection (WBS) Problem
+
+- We define $\Phi$ as the solution set to the WBS problem, representing the winning bids where $b_{ij} \in \Phi$.
+- $\Phi^E$ is the subset of $\Phi$ where the ECNs can complete the requests independently.
+- $\Phi^C$ is the subset where the requests need to be offloaded to the CC.
+- These two subsets are mutually exclusive and collectively exhaustive: $\Phi^E \cap \Phi^C = \emptyset$ and $\Phi^E \cup \Phi^C = \Phi$.
+
+#### Social Welfare Objective
+
+**Total valuation of winning bids minus the total cost:**
+$$
+\sum_{b_{ij} \in \Phi^E}(v_{ij} - A_i \cdot c_j^v) + \sum_{b_{ij} \in \Phi^C}(v_{ij} - A_i \cdot (c_j^t + c_0^v))
+$$
+
+- $A_i \cdot c_j^v$: cost for ECN $s_j$ to execute task $r_i$
+- $A_i \cdot (c_j^t + c_0^v)$: cost to offload and execute at the CC
+
+The equivalent optimization can be written as:
+$$
+\max \sum_{b_{ij} \in \Phi^E}(b_{ij} - A_i \cdot c_j^v) + \sum_{b_{ij} \in \Phi^C}(b_{ij} - A_i \cdot (c_j^t + c_0^v))
+$$
+
+### Payment Determination (PD) Problem
+
+The PD problem is about determining the payment for each winner such that the auction mechanism satisfies **truthfulness** and **individual rationality**.
+
+#### Truthfulness
+
+Let $p_{ij}(b_{ij})$ be the payment determined by the mechanism.
+
+The utility for truthful bidding is:
+$$
+v_{ij} - p_{ij}(v_{ij})
+$$
+And for untruthful bidding:
+$$
+v_{ij} - p_{ij}(b_{ij})
+$$
+To ensure truthfulness:
+$$
+v_{ij} - p_{ij}(v_{ij}) > v_{ij} - p_{ij}(b_{ij})
+$$
+
+#### Individual Rationality
+
+A user should not pay more than their valuation:
+$$
+v_{ij} > p_{ij}(b_{ij})
+$$
+
+#### Efficiency
+
+Algorithms with computational efficiency are prioritized over those that are optimal but computationally expensive.
+
+## AVA Mechanism
+
+### NP-Hardness Proof
+
+Assume there is only one ECN which cannot offload to the CC. The optimization reduces to:
+$$
+\max \sum_{b_{i1} \in \Phi^E}(b_{i1} - A_i \cdot c_1^v)
+$$
+Subject to:
+$$
+\sum_{b_{i1} \in \Phi^E} A_i < L_1
+$$
+
+This corresponds directly to the 0-1 knapsack problem. Since the simplified case is NP-hard, the general case is also NP-hard.
+
+
+
+### Baseline Solution for the WBS Problem
+
+#### First Phase
+
+Since the transmission delay to CC is always longer than to an ECN, we categorize ECN delay as "good" and CC delay as "bad". Based on the relationship between the deadline $T_i$ and the two delays, we update sets $B$ and $S$.
+
+We remove bids that cannot meet the deadline constraint and introduce virtual ECNs and virtual bids if the deadline exceeds the bad delay. There are three cases:
+
+1. If $ddl < good$, delete the bid because it cannot meet the deadline under any circumstance.
+2. If $good < ddl < bad$, keep the bid unchanged.
+3. If $ddl > bad$, create a virtual ECN ($s_{j*}$) and a virtual bid ($b_{ij*}$):
+   $$
+   s_{j*} = \{L_{j*} = A_i, c_{j*}^v = c_j^t + c_0^v, c_{j*}^t = b_{j*}^{up} = b_{j*}^{down} = 0\}
+   $$
+
+The virtual ECN has exactly the resource needed by request $i$, and its cost is the same as offloading to CC. The virtual bandwidths are all set to zero.
+
+This conversion essentially removes the CC from the edge-cloud hierarchy, reducing it from a three-layer to a two-layer system.
+
+#### Second Phase
+
+We focus on the WBS problem under capacity constraints. The winner selection problem is modeled as a **weighted bipartite matching** with 0-1 knapsack constraints.
+
+We build a graph:
+$$
+G = \{R, \widehat{S}, \varepsilon : \widehat{B}\}
+$$
+
+- $R$ and $\widehat{S}$ are independent node sets.
+- $\varepsilon$ is the set of edges, where each edge represents a bid $<r_i, s_j>$.
+- $\widehat{B}$ is the set of all bids, each corresponding to an edge.
+- Each request's VM demand is the weight (like item weight in knapsack).
+- Each ECN's VM capacity is the knapsack limit.
+- Each edge has a weight:
+  $$
+  w_{ij} = \frac{b_{ij}}{A_i} - c_j^v
+  $$
+
+This represents the gain per unit resource.
+
+Since we already included virtual ECNs and removed CC involvement, we have: $\Phi^C = \emptyset$, $\Phi^E = \Phi$.
+
+The objective function becomes:
+$$
+\max \sum_{b_{ij} \in \Phi} (b_{ij} - A_i \cdot c_j^v)
+$$
+
+We apply a greedy algorithm to approximate the maximum matching:
+
+1. If $A_i < L_j$: ECN $j$ has enough capacity.
+   - Add $b_{ij}$ to the final solution $\Phi$.
+   - Remove $r_i$ and all its incident edges from the graph.
+   - Update $L_j = L_j - A_i$
+2. If $A_i > L_j$: remove edge $<r_i, s_j>$ and continue.
+
+Repeat until all vertices and edges are processed. The final $\Phi$ contains all winning bids. Each selected request is scheduled either on ECN or CC as per prior classification.
+
+### Baseline Solution for PD Problem
+
+#### Critical Payment
+
+To ensure truthfulness, the payment $p_{ij}(b_{ij})$ must be the **critical value** — the minimum amount that still guarantees a winning bid.
+
+To compute this, we first identify an alternative winning bid if $b_{ij}$ is removed from the graph.
+
+Steps:
+
+1. Remove edge $<r_i, s_j>$ to construct a new bipartite graph $G_{-ij}$ with updated edges $\varepsilon_{-ij}$.
+2. Recompute the maximum matching to obtain a new solution $\Phi_{-ij}$.
+3. The substitute winning bid must be in $\Phi_{-ij}$.
+
+Two possibilities arise:
+
+1. $r_i$ gets assigned to another ECN $s_{j'}$, then $b_{ij'}$ is the alternative.
+2. $s_j$ has other winning bids like $b_{i_1j}, b_{i_2j}, \dots$
+
+In the second case, we determine the weakest bid that still prevents $r_i$ from being accepted, called $b_{i_{min}j}$:
+$$
+b_{i_{min}j} = \min \left\{ w_{i_1j}, w_{i_2j}, \dots : L_j - \sum(w_{i_xj} - w_{i_yj}) A_{i_x} \geq A_i \right\}
+$$
+
+$s_j$ always selects the highest gain requests until it lacks sufficient capacity. Hence, $b_{i_{min}j}$ is the marginal case blocking $r_i$.
+
+Final payment:
+$$
+p_{ij}(b_{ij}) = A_i \cdot (c_j^v + \max\{w_{ij'}, w_{i_{min}j}\})
+$$
