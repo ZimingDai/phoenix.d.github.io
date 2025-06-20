@@ -4,6 +4,7 @@ collection: publications
 category: manuscripts
 permalink: /publications/2024-gpmgfl
 date: 2024-11-11
+excerpt: ''
 venue: 'IEEE Transactions on Cloud Computing'
 paperurl: 'https://doi.org/10.1109/TCC.2024.3494765'
 citation: '<strong>Ziming Dai</strong>, Yunfeng Zhao, Chao Qiu, Xiaofei Wang, Haipeng Yao, and Dusit Niyato. "Multi-Granularity Federated Learning by Graph-Partitioning." IEEE Transactions on Cloud Computing (2024).'
