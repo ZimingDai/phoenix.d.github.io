@@ -1,6 +1,7 @@
 ---
 title: "Multi-Granularity Federated Learning by Graph-Partitioning"
 collection: publications
+category: manuscripts
 permalink: /publications/2024-gpmgfl
 date: 2024-11-11
 venue: 'IEEE Transactions on Cloud Computing'

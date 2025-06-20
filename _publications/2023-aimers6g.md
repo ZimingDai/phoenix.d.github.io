@@ -1,6 +1,7 @@
 ---
 title: "AImers-6G: AI-Driven Region-Temporal Resource Provisioning for 6G Immersive Services"
 collection: publications
+category: manuscripts
 permalink: /publications/2023-aimers6g
 date: 2023-06-13
 venue: 'IEEE Wireless Communications'
