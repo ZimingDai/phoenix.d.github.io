@@ -1,7 +1,6 @@
 ---
 title: "Stratos: An End-to-End Distillation Pipeline for Customized LLMs under Distributed Cloud Environments"
 collection: publications
-category: conferences
 permalink: /publications/2025-stratos
 excerpt: 'This paper presents Stratos, a comprehensive and automated pipeline for distilling and deploying customized LLMs across distributed cloud infrastructure, optimizing for performance, cost, and domain-specific task adaptation.'
 date: 2025-03-22

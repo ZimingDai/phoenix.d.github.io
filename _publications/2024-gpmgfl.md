@@ -1,9 +1,7 @@
 ---
 title: "Multi-Granularity Federated Learning by Graph-Partitioning"
 collection: publications
-category: manuscripts
 permalink: /publications/2024-gpmgfl
-excerpt: 'This paper proposes GP-MGFL, a blockchain-based multi-granularity federated learning framework that improves accuracy, efficiency, and robustness through graph partitioning, cross-granularity guidance, and credit-based trust modeling.'
 date: 2024-11-11
 venue: 'IEEE Transactions on Cloud Computing'
 paperurl: 'https://doi.org/10.1109/TCC.2024.3494765'
