@@ -3,8 +3,8 @@ title: "NSR-Boost: A Neuro-Symbolic Residual Boosting Framework for Industrial L
 collection: publications
 permalink: /publications/2026-nsrboost
 category: conferences
-date: 2026-01-29
-venue: ''
+date: 2026-01-31
+venue: 'Arxiv'
 excerpt: ''
 citation: '<u>Dabiao Ma</u>, <u><strong>Ziming Dai</strong></u>, Zhimin Xin, Shu Wang, Jian Yang, and Haojun Fei. "TS-PEFT: Unveiling Token-Level Redundancy in Parameter-Efficient Fine-Tuning." arXiv preprint arXiv:2511.16147 (2026).'
 ---
@@ -24,7 +24,8 @@ This paper introduces **NSR-Boost**, a neuro-symbolic residual boosting framewor
 
 Tianjin University; Qfin Holdings, Inc.
 
-<div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px;">
-  <img src="../images/logo/logo_tju.png" alt="Tianjin University" height="10">
-  <img src="../images/logo/logo_qifu.png" alt="Qfin Holdings, Inc." height="10">
+
+<div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px; align-items: center;">
+  <img src="../images/logo/logo_tju.png" alt="Tianjin University" style="height: 50px; width: auto; margin: 0;">
+  <img src="../images/logo/logo_qifu.png" alt="Qfin Holdings, Inc." style="height: 50px; width: auto; margin: 0;">
 </div>

@@ -28,8 +28,8 @@ This paper introduces **Almers-6G**, an AI-driven approach designed for resource
 
 Tianjin University; Guangming Laboratory of Artificial Intelligence and Digital Economy (SZ); Tianjin University of Finance and Economics
 
-<div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px;">
-  <img src="../images/logo/logo_tju.png" alt="Tianjin University" height="10">
-  <img src="../images/logo/logo_gml.png" alt="Guangdong Laboratory" height="10">
-  <img src="../images/logo/logo_tjufe.png" alt="Tianjin University of Finance" height="10">
+<div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px; align-items: center;">
+  <img src="../images/logo/logo_tju.png" alt="Tianjin University" style="height: 50px; width: auto; margin: 0;">
+  <img src="../images/logo/logo_gml.png" alt="Guangdong Laboratory" style="height: 50px; width: auto; margin: 0;">
+  <img src="../images/logo/logo_tjufe.png" alt="Tianjin University of Finance" style="height: 50px; width: auto; margin: 0;">
 </div>
