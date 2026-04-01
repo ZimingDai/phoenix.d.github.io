@@ -30,6 +30,6 @@ redirect_from:
 🚀 I’m currently exploring how to combine LLMs with edge devices through distributed learning and distillation — making intelligence more **personal, private, and practical**.
 
 📄 You can view or download my latest CV here:  
-👉 [**CV_ZimingDai.pdf**](https://zimingdai.github.io/assets/CV_Zimingdai.pdf)
+👉 [**CV_ZimingDai.pdf**](../assets/CV_ZimingDai.pdf)
 
 🛠 Feel free to check out my [blog](https://zimingdai.github.io/), or reach out if you’d like to connect!
