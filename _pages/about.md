@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-👋 Hi there! I'm **Ziming Dai (戴子明)**, a second-year Master's student in the College of Intelligence and Computing at **Tianjin University** 🇨🇳. I currently conduct research at the [Edge Big Bang Lab](http://www.drxiaofei.wang/), under the supervision of [Prof. Xiaofei Wang](https://cic.tju.edu.cn/faculty/wangxiaofei/index.html) and [Prof. Chao Qiu](http://qiuchao.fei8s.com/).
+👋 Hi there! I'm **Ziming Dai (戴子明)**, a third-year Master's student in the College of Intelligence and Computing at **Tianjin University** 🇨🇳. I currently conduct research at the [Edge Big Bang Lab](http://www.drxiaofei.wang/), under the supervision of [Prof. Xiaofei Wang](https://cic.tju.edu.cn/faculty/wangxiaofei/index.html) and [Prof. Chao Qiu](http://qiuchao.fei8s.com/).
 
 🎓 I received my **Bachelor of Engineering** in **Artificial Intelligence** from **Tianjin University** in **2019–2023**, where my undergraduate thesis on *blockchain-based group federated learning* was awarded as an **Outstanding Graduation Thesis**. Currently, I am pursuing my **Master of Engineering** in **Electronic and Information Engineering** at the same institution, expected to graduate in **2026**.
 
