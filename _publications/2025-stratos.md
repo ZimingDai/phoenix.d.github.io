@@ -20,11 +20,11 @@ This paper introduces **Stratos**, an end-to-end Large Language Model (LLM) dist
 * **Strong Generalization:** The pipeline demonstrates significant reasoning enhancements and robust generalization capabilities across complex mathematical reasoning benchmarks, such as GSM8K and AIME.
 
 ### 🤝 Collaborating Institutions
-Tianjin University | University of Southern California | Tianjin University of Finance and Economics | Paiou Cloud Computing (Shanghai) Co., Ltd
+Tianjin University; University of Southern California; Tianjin University of Finance and Economics; Paiou Cloud Computing (Shanghai) Co., Ltd
 
 <div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px;">
-  <img src="../images/logo/logo_tju.png" alt="Tianjin University" height="50">
-  <img src="../images/logo/logo_usc.png" alt="Guangming Laboratory" height="50">
-  <img src="../images/logo/logo_tjufe.png" alt="Guangming Laboratory" height="50">
-  <img src="../images/logo/logo_ppio.png" alt="Tianjin University of Finance" height="50">
+  <img src="../images/logo/logo_tju.png" alt="Tianjin University" height="10">
+  <img src="../images/logo/logo_usc.png" alt="Guangming Laboratory" height="10">
+  <img src="../images/logo/logo_tjufe.png" alt="Guangming Laboratory" height="10">
+  <img src="../images/logo/logo_ppio.png" alt="Tianjin University of Finance" height="10">
 </div>

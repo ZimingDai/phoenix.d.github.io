@@ -26,10 +26,10 @@ This paper introduces **Almers-6G**, an AI-driven approach designed for resource
 
 ### 🤝 Collaborating Institutions
 
-Tianjin University | Guangming Laboratory of Artificial Intelligence and Digital Economy (SZ) | Tianjin University of Finance and Economics
+Tianjin University; Guangming Laboratory of Artificial Intelligence and Digital Economy (SZ); Tianjin University of Finance and Economics
 
 <div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px;">
-  <img src="../images/logo/logo_tju.png" alt="Tianjin University" height="50">
-  <img src="../images/logo/logo_gml.png" alt="Guangdong Laboratory" height="50">
-  <img src="../images/logo/logo_tjufe.png" alt="Tianjin University of Finance" height="50">
+  <img src="../images/logo/logo_tju.png" alt="Tianjin University" height="10">
+  <img src="../images/logo/logo_gml.png" alt="Guangdong Laboratory" height="10">
+  <img src="../images/logo/logo_tjufe.png" alt="Tianjin University of Finance" height="10">
 </div>

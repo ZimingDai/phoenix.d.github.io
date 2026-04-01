@@ -21,11 +21,11 @@ This paper proposes a **Graph-Partitioning Multi-Granularity Federated Learning 
 * **Robust Security:** In scenarios involving malicious clients, the method demonstrates strong robustness, achieving a maximum accuracy improvement of 11.1% over baseline models.
 
 ### 🤝 Collaborating Institutions
-Tianjin University | Guangming Laboratory of Artificial Intelligence and Digital Economy (SZ) | Beijing University of Posts and Telecommunications | Nanyang Technological University
+Tianjin University; Guangming Laboratory of Artificial Intelligence and Digital Economy (SZ); Beijing University of Posts and Telecommunications; Nanyang Technological University
 
 <div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px;">
-  <img src="../images/logo/logo_tju.png" alt="Tianjin University" height="50">
-  <img src="../images/logo/logo_gml.png" alt="Guangming Laboratory" height="50">
-  <img src="../images/logo/logo_bupt.png" alt="Guangming Laboratory" height="50">
-  <img src="../images/logo/logo_ntu.png" alt="Tianjin University of Finance" height="50">
+  <img src="../images/logo/logo_tju.png" alt="Tianjin University" height="10">
+  <img src="../images/logo/logo_gml.png" alt="Guangming Laboratory" height="10">
+  <img src="../images/logo/logo_bupt.png" alt="Guangming Laboratory" height="10">
+  <img src="../images/logo/logo_ntu.png" alt="Tianjin University of Finance" height="10">
 </div>
