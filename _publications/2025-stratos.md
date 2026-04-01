@@ -22,7 +22,7 @@ This paper introduces **Stratos**, an end-to-end Large Language Model (LLM) dist
 ### 🤝 Collaborating Institutions
 Tianjin University; University of Southern California; Tianjin University of Finance and Economics; Paiou Cloud Computing (Shanghai) Co., Ltd
 
-<div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px; align-items: center;">
+<div style="max-width: 80%; margin: 0 auto 30px auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px; align-items: center;">
   <img src="../images/logo/logo_tju.png" alt="Tianjin University" style="height: 50px; width: auto; margin: 0;">
   <img src="../images/logo/logo_usc.png" alt="Guangming Laboratory" style="height: 50px; width: auto; margin: 0;">
   <img src="../images/logo/logo_tjufe.png" alt="Guangming Laboratory" style="height: 50px; width: auto; margin: 0;">

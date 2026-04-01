@@ -23,7 +23,7 @@ This paper introduces **TS-PEFT**, a theoretical framework utilizing proximal op
 Tianjin University; Qfin Holdings, Inc.
 
 
-<div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px; align-items: center;">
+<div style="max-width: 80%; margin: 0 auto 30px auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px; align-items: center;">
   <img src="../images/logo/logo_tju.png" alt="Tianjin University" style="height: 50px; width: auto; margin: 0;">
   <img src="../images/logo/logo_qifu.png" alt="Qfin Holdings, Inc." style="height: 50px; width: auto; margin: 0;">
 </div>
