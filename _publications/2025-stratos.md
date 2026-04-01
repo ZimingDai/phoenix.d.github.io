@@ -4,15 +4,27 @@ collection: publications
 permalink: /publications/2025-stratos
 category: conferences
 date: 2025-03-22
-venue: 'NaN'
+venue: 'AAAI'
 excerpt: ''
-citation: '<strong>Ziming Dai</strong> "Stratos: An End-to-End Distillation Pipeline for Customized LLMs under Distributed Cloud Environments"'
+citation: '<strong>Ziming Dai</strong>, Tuo Zhang, Fei Gao, Xingyi Cai, Xiaofei Wang, Cheng Zhang, Wenyu Wang, and Chengjie Zang. "Stratos: An End-to-End Distillation Pipeline for Customized LLMs Under Distributed Cloud Environments." In Proceedings of the AAAI Conference on Artificial Intelligence, vol. 40, no. 47, pp. 40506-40512. 2026.'
 ---
 
-In this work, we introduce **Stratos**, a fully automated end-to-end LLM distillation and deployment pipeline tailored for distributed cloud environments. Stratos dynamically selects optimal teacher-student model pairs and matches them with appropriate cloud servers based on user-defined performance and budget constraints.
+<img src="../images/stratos.png" alt="System overview of the proposed end-to-end distillation pipeline." style="max-width: 90%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 
-The system leverages two core strategies—**Knowledge Alignment** and **Knowledge Injection**—to transfer reasoning capabilities from large models to smaller, cost-effective student models. In challenging domains where the teacher model lacks pretraining exposure (e.g., Mahjong reasoning), Stratos employs prompt engineering and synthetic data generation to enable knowledge transfer beyond the teacher’s limitations.
+### ✨ Proposed Method
+This paper introduces **Stratos**, an end-to-end Large Language Model (LLM) distillation pipeline designed to automate server/model selection, knowledge distillation, and deployment in distributed cloud environments. To optimize cloud hosting under user-defined budget and latency constraints, Stratos automatically selects Pareto-optimal servers and dynamically matches teacher-student model pairs. Furthermore, it features an adaptive dual-mode knowledge distillation framework that intelligently switches between "Knowledge Alignment" and "Knowledge Injection" based on the task's complexity and the teacher model's domain coverage.
 
-Empirical results show that Stratos significantly improves student model performance, achieving a 4× accuracy gain over GPT-4o on domain-specific tasks. The system has been deployed across a 3,700+ node commercial distributed cloud, demonstrating practical feasibility.
+### 📊 Experimental Results
+* **Exceptional Domain Adaptation:** On a rare, domain-specific Mahjong reasoning task, the Stratos-distilled student model achieves four times (4x) the accuracy of its GPT-4o teacher baseline.
+* **Optimal Resource Efficiency:** By successfully balancing accuracy, latency, training time, and cost, Stratos improves the overall deployment score by at least 22% compared to traditional single-objective (e.g., accuracy-first or cost-first) selection methods.
+* **Strong Generalization:** The pipeline demonstrates significant reasoning enhancements and robust generalization capabilities across complex mathematical reasoning benchmarks, such as GSM8K and AIME.
 
-Stratos is envisioned as a versatile toolkit to empower researchers and developers in building customized, efficient, and affordable LLM solutions for vertical applications.
+### 🤝 Collaborating Institutions
+Tianjin University | University of Southern California | Tianjin University of Finance and Economics | Paiou Cloud Computing (Shanghai) Co., Ltd
+
+<p align="left">
+  <img src="../images/logo/logo_tju.png" alt="Tianjin University" height="100"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="../images/logo/logo_usc.png" alt="Guangming Laboratory" height="100"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="../images/logo/logo_tjufe.png" alt="Guangming Laboratory" height="100"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="../images/logo/logo_ppio.png" alt="Tianjin University of Finance" height="100">
+</p>
