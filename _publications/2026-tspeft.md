@@ -3,8 +3,8 @@ title: "TS-PEFT: Unveiling Token-Level Redundancy in Parameter-Efficient Fine-Tu
 collection: publications
 permalink: /publications/2026-tspeft
 category: conferences
-date: 2026-01-29
-venue: ''
+date: 2026-01-31
+venue: 'Arxiv'
 excerpt: ''
 citation: '<u>Dabiao Ma</u>, <u><strong>Ziming Dai</strong></u>, Zhimin Xin, Shu Wang, Jian Yang, and Haojun Fei. "TS-PEFT: Unveiling Token-Level Redundancy in Parameter-Efficient Fine-Tuning." arXiv preprint arXiv:2511.16147 (2026).'
 ---
@@ -22,7 +22,8 @@ This paper introduces **TS-PEFT**, a theoretical framework utilizing proximal op
 
 Tianjin University; Qfin Holdings, Inc.
 
-<div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px;">
-  <img src="../images/logo/logo_tju.png" alt="Tianjin University" height="10">
-  <img src="../images/logo/logo_qifu.png" alt="Guangming Laboratory" height="10">
+
+<div style="max-width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px; align-items: center;">
+  <img src="../images/logo/logo_tju.png" alt="Tianjin University" style="height: 10px; width: auto; margin: 0;">
+  <img src="../images/logo/logo_qifu.png" alt="Qfin Holdings, Inc." style="height: 10px; width: auto; margin: 0;">
 </div>
