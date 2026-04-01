@@ -24,8 +24,8 @@ This paper proposes a **Graph-Partitioning Multi-Granularity Federated Learning 
 Tianjin University; Guangming Laboratory of Artificial Intelligence and Digital Economy (SZ); Beijing University of Posts and Telecommunications; Nanyang Technological University
 
 <div style="max-width: 80%; margin: 0 auto 30px auto; display: flex; flex-wrap: wrap; justify-content: left; gap: 30px; align-items: center;">
-  <img src="../images/logo/logo_tju.png" alt="Tianjin University" style="height: 50px; width: auto; margin: 0;">
-  <img src="../images/logo/logo_gml.png" alt="Guangming Laboratory" style="height: 50px; width: auto; margin: 0;">
-  <img src="../images/logo/logo_bupt.png" alt="Guangming Laboratory" style="height: 50px; width: auto; margin: 0;">
-  <img src="../images/logo/logo_ntu.png" alt="Tianjin University of Finance" style="height: 50px; width: auto; margin: 0;">
+  <img src="../images/logo/logo_tju.png" alt="Tianjin University" style="height: 70px; width: auto; margin: 0;">
+  <img src="../images/logo/logo_gml.png" alt="Guangming Laboratory" style="height: 70px; width: auto; margin: 0;">
+  <img src="../images/logo/logo_bupt.png" alt="Guangming Laboratory" style="height: 70px; width: auto; margin: 0;">
+  <img src="../images/logo/logo_ntu.png" alt="Tianjin University of Finance" style="height: 70px; width: auto; margin: 0;">
 </div>
