@@ -4,9 +4,9 @@ collection: publications
 permalink: /publications/2026-tspeft
 category: conferences
 date: 2026-01-29
-venue: 'Arxiv'
+venue: 'IJCAI-ECAI'
 excerpt: ''
-citation: '<u>Dabiao Ma</u>, <u><strong>Ziming Dai</strong></u>, Zhimin Xin, Shu Wang, Jian Yang, and Haojun Fei. "TS-PEFT: Unveiling Token-Level Redundancy in Parameter-Efficient Fine-Tuning." arXiv preprint arXiv:2511.16147 (2026).'
+citation: '<u>Dabiao Ma</u>, <u><strong>Ziming Dai</strong></u>, Zhimin Xin, Shu Wang, Jian Yang, and Haojun Fei. "TS-PEFT: Unveiling Token-Level Redundancy in Parameter-Efficient Fine-Tuning." In the 35th International Joint Conference on Artificial Intelligence. 2026.'
 ---
 
 <img src="../images/tspeft.png" alt="Comparison between standard PEFT and our TS-PEFT framework." style="max-width: 100%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
