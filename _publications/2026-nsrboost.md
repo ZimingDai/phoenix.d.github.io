@@ -4,12 +4,12 @@ collection: publications
 permalink: /publications/2026-nsrboost
 category: conferences
 date: 2026-01-31
-venue: 'Arxiv'
+venue: 'SIGKDD'
 excerpt: ''
-citation: '<strong>Ziming Dai</strong>, Dabiao Ma, Jinle Tong, Mengyuan Han, Jian Yang, Hongtao Liu, Haojun Fei, and Qing Yang. "NSR-Boost: A Neuro-Symbolic Residual Boosting Framework for Industrial Legacy Models." arXiv preprint arXiv:2601.10457 (2026).'
+citation: '<strong>Ziming Dai</strong>, Dabiao Ma, Jinle Tong, Mengyuan Han, Jian Yang, Hongtao Liu, Haojun Fei, and Qing Yang. "NSR-Boost: A Neuro-Symbolic Residual Boosting Framework for Industrial Legacy Models." Accepted by the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (SIGKDD 2026).'
 ---
 
-<img src="../images/nsrboost.png" alt="Comparison between standard PEFT and our TS-PEFT framework." style="max-width: 100%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<img src="../images/nsrboost.png" alt="Overview of the NSR-Boost neuro-symbolic residual boosting framework." style="max-width: 100%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 
 
 ### ✨ Proposed Method
