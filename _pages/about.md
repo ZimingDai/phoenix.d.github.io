@@ -1,35 +1,140 @@
 ---
+layout: home
 permalink: /
-title: "About Me"
+title: "Ziming (Phoenix) Dai"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-👋 Hi there! I'm **Ziming Dai (戴子明)**, a third-year Master's student in the College of Intelligence and Computing at **Tianjin University** 🇨🇳. I currently conduct research at the [Edge Big Bang Lab](http://www.drxiaofei.wang/), under the supervision of [Prof. Xiaofei Wang](https://cic.tju.edu.cn/faculty/wangxiaofei/index.html) and [Prof. Chao Qiu](http://qiuchao.fei8s.com/).
+{% include base_path %}
 
-🎓 I received my **Bachelor of Engineering** in **Artificial Intelligence** from **Tianjin University** in 2023, where my undergraduate thesis on *blockchain-based group federated learning* was awarded as an **Outstanding Graduation Thesis**. I am currently pursuing my **Master of Engineering** in **Computer Technology** at the same institution, expected to graduate in **2026**. Starting in Fall 2026, I will begin my Ph.D. journey at CityU under the supervision of [Prof. Zimu Zhou](https://zhouzimu.github.io/).
+<div class="home-page">
 
-💼 Professionally, I am currently working as an **NLP Engineer Intern** at **Qfin Holdings, Inc.** (formerly 360 DigiTech) since September 2025. Previously, in the summer of 2022, I interned as an **Algorithm Engineer** at **Beijing Wenge Technology Co., Ltd.**, where I joined a team focused on **Named Entity Recognition (NER)** in low-resource languages, coordinating efforts across model pretraining and linguistic enhancement modules.
+<section class="home-hero">
+  <p class="home-hero__eyebrow">Federated Learning · Edge Intelligence · LLM Personalization</p>
+  <h1>Ziming (Phoenix) Dai</h1>
+  <p class="home-hero__role">Ph.D. Student, City University of Hong Kong</p>
+  <p class="home-hero__lead">
+    I work on personalized and deployable AI systems, with a focus on federated learning, edge intelligence, and large language model adaptation under privacy, latency, and resource constraints.
+  </p>
+  <div class="home-tag-list">
+    <span>Federated Learning</span>
+    <span>Edge Intelligence</span>
+    <span>LLM Personalization</span>
+    <span>Efficient Deployment</span>
+  </div>
+  <div class="home-hero__actions">
+    <a href="{{ '/publications/' | prepend: base_path }}" class="home-button home-button--primary">Publications</a>
+    <a href="{{ '/assets/CV_ZimingDai.pdf' | prepend: base_path }}" class="home-button">CV</a>
+  </div>
+</section>
 
-💡 My research centers on **federated learning**, **edge intelligence**, and **large language model (LLM) personalization**. I’m especially interested in enabling LLMs to adapt to local contexts by efficiently leveraging private data in decentralized, resource-constrained environments.
+<section class="home-section">
+  <div class="home-section__header">
+    <h2>Current Focus</h2>
+    <p>
+      My current research explores how intelligent models can adapt to local contexts while remaining efficient, private, and practical for real-world edge and distributed environments.
+    </p>
+  </div>
+</section>
 
-⚙️ I aim to build intelligent systems that are not only powerful but also **deployable in real-world edge scenarios**, particularly where **privacy and energy efficiency** are essential.
+<section class="home-section">
+  <div class="home-section__header">
+    <h2>Experience</h2>
+  </div>
 
----
+  <div class="home-experience-grid">
+    <div class="home-experience-item home-experience-item--education">
+      <div class="home-experience-item__mark home-experience-item__mark--logo">
+        <img src="{{ '/images/logo/logo_cityu.png' | prepend: base_path }}" alt="City University of Hong Kong">
+      </div>
+      <div>
+        <span class="home-experience-item__date">2026 - Present</span>
+        <h3>City University of Hong Kong</h3>
+        <p>Ph.D. Student, advised by <a href="https://zhouzimu.github.io/">Prof. Zimu Zhou</a>.</p>
+      </div>
+    </div>
 
-### 🔍 Research Interests
-- ⚡ Federated & Edge Learning Systems  
-- 🤖 Customization and Distillation of LLMs  
-- 🔐 Privacy-Preserving AI  
-- 🌱 Green AI & Efficient Model Deployment  
+    <div class="home-experience-item home-experience-item--industry">
+      <div class="home-experience-item__mark home-experience-item__mark--logo">
+        <img src="{{ '/images/logo/logo_360.png' | prepend: base_path }}" alt="360 Digital">
+      </div>
+      <div>
+        <span class="home-experience-item__date">2025 - 2026</span>
+        <h3>360 Digital</h3>
+        <p>NLP Engineer Intern, working on industrial language models and model enhancement.</p>
+      </div>
+    </div>
 
----
+    <div class="home-experience-item home-experience-item--education">
+      <div class="home-experience-item__mark home-experience-item__mark--logo">
+        <img src="{{ '/images/logo/logo_tju.png' | prepend: base_path }}" alt="Tianjin University">
+      </div>
+      <div>
+        <span class="home-experience-item__date">2023 - 2026</span>
+        <h3>Tianjin University</h3>
+        <p>M.Eng. in Computer Technology at <a href="http://www.drxiaofei.wang/">Edge Big Bang Lab</a>, advised by <a href="http://qiuchao.fei8s.com/">Prof. Chao Qiu</a> and <a href="https://cic.tju.edu.cn/faculty/wangxiaofei/index.html">Prof. Xiaofei Wang</a>.</p>
+      </div>
+    </div>
 
-🚀 I’m currently exploring how to combine LLMs with edge devices through distributed learning and distillation — making intelligence more **personal, private, and practical**.
+    <div class="home-experience-item home-experience-item--industry">
+      <div class="home-experience-item__mark home-experience-item__mark--logo">
+        <img src="{{ '/images/logo/logo_wenge.png' | prepend: base_path }}" alt="Beijing Wenge Technology">
+      </div>
+      <div>
+        <span class="home-experience-item__date">2022</span>
+        <h3>Beijing Wenge Technology</h3>
+        <p>Algorithm Engineer Intern, focusing on named entity recognition for low-resource languages.</p>
+      </div>
+    </div>
 
-📄 You can view or download my latest CV here:  
-👉 [**CV_ZimingDai.pdf**](../assets/CV_ZimingDai.pdf)
+    <div class="home-experience-item home-experience-item--education">
+      <div class="home-experience-item__mark home-experience-item__mark--logo">
+        <img src="{{ '/images/logo/logo_tju.png' | prepend: base_path }}" alt="Tianjin University">
+      </div>
+      <div>
+        <span class="home-experience-item__date">2019 - 2023</span>
+        <h3>Tianjin University</h3>
+        <p>B.Eng. in Artificial Intelligence.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-🛠 Feel free to check out my [blog](https://zimingdai.github.io/), or reach out if you’d like to connect!
+<section class="home-section">
+  <div class="home-section__header home-section__header--split">
+    <div>
+      <h2>Selected Publications</h2>
+    </div>
+    <a href="{{ '/publications/' | prepend: base_path }}" class="home-link">All publications</a>
+  </div>
+
+  <div class="home-publication-list">
+    {% assign homepage_publications = site.publications | sort: "sort_date" | reverse %}
+    {% assign selected_count = 0 %}
+    {% for post in homepage_publications %}
+      {% if post.rank == "a" and selected_count < 3 %}
+        {% assign selected_count = selected_count | plus: 1 %}
+        <a class="home-publication home-publication--a" href="{{ post.url | prepend: base_path }}">
+          <span class="home-publication__meta">
+            <strong>{{ post.rank_label }}</strong>
+            <span>{{ post.venue }}</span>
+            <span>{{ post.date | date: "%Y" }}</span>
+          </span>
+          <span class="home-publication__title">{{ post.title }}</span>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="home-section home-section--connect">
+  <h2>Connect</h2>
+  <p>
+    You can view my <a href="{{ '/assets/CV_ZimingDai.pdf' | prepend: base_path }}">CV</a>, visit my <a href="https://zimingdai.github.io/">blog</a>, or reach out by email.
+  </p>
+</section>
+
+</div>

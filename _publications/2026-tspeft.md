@@ -10,7 +10,7 @@ rank: a
 rank_label: 'CCF-A'
 teaser: 'tspeft.png'
 excerpt: ''
-authors: 'Dabiao Ma, <strong>Ziming Dai</strong>, Zhimin Xin, Shu Wang, Jian Yang, and Haojun Fei'
+authors: 'Dabiao Ma<sup>*</sup>, <strong>Ziming Dai</strong><sup>*</sup>, Zhimin Xin, Shu Wang, Jian Yang, and Haojun Fei'
 highlight: 'A token-level sparsity perspective for reducing redundant updates in parameter-efficient fine-tuning.'
 keywords: ['PEFT', 'Token Sparsity', 'LLM Fine-Tuning']
 citation: '<u>Dabiao Ma</u>, <u><strong>Ziming Dai</strong></u>, Zhimin Xin, Shu Wang, Jian Yang, and Haojun Fei. "TS-PEFT: Unveiling Token-Level Redundancy in Parameter-Efficient Fine-Tuning." In the 35th International Joint Conference on Artificial Intelligence. 2026.'
