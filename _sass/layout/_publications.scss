@@ -1,0 +1,267 @@
+/* ==========================================================================
+   Publication cards
+   ========================================================================== */
+
+.publication-list {
+  margin-top: 1.25rem;
+}
+
+.publication-year {
+  margin: 1.6rem 0 0.75rem;
+  padding-bottom: 0.35rem;
+  font-size: $type-size-4;
+  line-height: 1.2;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.publication-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.9rem;
+  border: 1px solid var(--global-border-color);
+  border-left-width: 5px;
+  border-radius: 8px;
+  background: var(--global-bg-color);
+  box-shadow: 0 2px 10px rgba(18, 25, 38, 0.05);
+}
+
+.publication-card--a,
+.publication-card--q1 {
+  box-shadow: 0 6px 18px rgba(129, 59, 38, 0.12);
+}
+
+.publication-card--a {
+  border-left-color: #b42318;
+}
+
+.publication-card--q1 {
+  border-left-color: #b7791f;
+}
+
+.publication-card--b {
+  border-left-color: #2563a9;
+}
+
+.publication-card--c {
+  border-left-color: #2f855a;
+}
+
+.publication-card--other {
+  border-left-color: #6b7280;
+}
+
+.publication-card__teaser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 104px;
+  overflow: hidden;
+  border: 1px solid rgba(120, 130, 150, 0.25);
+  border-radius: 6px;
+  background: #f7fafc;
+  color: var(--global-text-color-light);
+  font-size: $type-size-7;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+.publication-card__teaser img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.35rem;
+}
+
+.publication-card__body {
+  min-width: 0;
+}
+
+.publication-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+  color: var(--global-text-color-light);
+  font-size: $type-size-7;
+  line-height: 1.2;
+}
+
+.publication-card__rank,
+.publication-card__venue,
+.publication-card__year {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.45rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.publication-card__rank {
+  color: #fff;
+  font-weight: 700;
+}
+
+.publication-card__rank--a {
+  background: #b42318;
+}
+
+.publication-card__rank--q1 {
+  background: #b7791f;
+}
+
+.publication-card__rank--b {
+  background: #2563a9;
+}
+
+.publication-card__rank--c {
+  background: #2f855a;
+}
+
+.publication-card__rank--other {
+  background: #6b7280;
+}
+
+.publication-card__venue {
+  border: 1px solid rgba(120, 130, 150, 0.35);
+  background: rgba(120, 130, 150, 0.08);
+  color: var(--global-text-color);
+  font-weight: 700;
+}
+
+.publication-card__year {
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+}
+
+.publication-card__title {
+  margin: 0 0 0.3rem !important;
+  border-bottom: none !important;
+  font-family: $sans-serif;
+  font-size: $type-size-5;
+  line-height: 1.28;
+}
+
+.publication-card__title a {
+  color: var(--global-text-color);
+  text-decoration: none !important;
+}
+
+.publication-card__title a:hover {
+  color: var(--global-link-color);
+  text-decoration: underline !important;
+}
+
+.publication-card__authors,
+.publication-card__highlight {
+  margin: 0 0 0.35rem;
+  font-size: $type-size-6;
+  line-height: 1.45;
+}
+
+.publication-card__authors {
+  color: var(--global-text-color);
+}
+
+.publication-card__highlight {
+  color: var(--global-text-color-light);
+}
+
+.publication-card__keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.45rem 0 0;
+}
+
+.publication-card__keyword {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.45rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  color: var(--global-text-color);
+  font-size: $type-size-7;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.publication-card__keyword--model {
+  border: 1px solid #c9d8ee;
+  background: #f1f6fd;
+  color: #35506f;
+}
+
+.publication-card__keyword--federated {
+  border: 1px solid #cbdccf;
+  background: #f1f7f2;
+  color: #3f5f45;
+}
+
+.publication-card__keyword--systems {
+  border: 1px solid #d7d1e7;
+  background: #f6f3fb;
+  color: #554b6f;
+}
+
+.publication-card__keyword--networking {
+  border: 1px solid #d9d9c3;
+  background: #f8f8ee;
+  color: #5f5b3d;
+}
+
+.publication-card__keyword--symbolic {
+  border: 1px solid #e3d1ca;
+  background: #fbf4f1;
+  color: #6a4b43;
+}
+
+.publication-card__keyword--general {
+  border: 1px solid #d7dce2;
+  background: #f5f7f9;
+  color: #4f5b66;
+}
+
+.publication-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.publication-card__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  min-height: 1.85rem;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid rgba(120, 130, 150, 0.35);
+  border-radius: 6px;
+  background: rgba(120, 130, 150, 0.06);
+  color: var(--global-text-color) !important;
+  font-size: $type-size-7;
+  line-height: 1;
+  text-decoration: none !important;
+}
+
+.publication-card__action:hover {
+  border-color: var(--global-link-color);
+  color: var(--global-link-color) !important;
+}
+
+@media (max-width: 600px) {
+  .publication-card {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-card__teaser {
+    width: 100%;
+    height: 132px;
+  }
+}

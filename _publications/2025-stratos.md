@@ -3,9 +3,16 @@ title: "Stratos: An End-to-End Distillation Pipeline for Customized LLMs under D
 collection: publications
 permalink: /publications/2025-stratos
 category: conferences
-date: 2025-03-22
+date: 2026-03-22
+sort_date: 2026-01-20
 venue: 'AAAI'
+rank: a
+rank_label: 'CCF-A'
+teaser: 'stratos.png'
 excerpt: ''
+authors: '<strong>Ziming Dai</strong>, Tuo Zhang, Fei Gao, Xingyi Cai, Xiaofei Wang, Cheng Zhang, Wenyu Wang, and Chengjie Zang'
+highlight: 'An end-to-end distillation pipeline for customized LLM deployment under distributed cloud constraints.'
+keywords: ['LLM Distillation', 'Distributed Cloud', 'Model Deployment']
 citation: '<strong>Ziming Dai</strong>, Tuo Zhang, Fei Gao, Xingyi Cai, Xiaofei Wang, Cheng Zhang, Wenyu Wang, and Chengjie Zang. "Stratos: An End-to-End Distillation Pipeline for Customized LLMs Under Distributed Cloud Environments." In Proceedings of the AAAI Conference on Artificial Intelligence, vol. 40, no. 47, pp. 40506-40512. 2026.'
 ---
 
@@ -28,4 +35,3 @@ Tianjin University; University of Southern California; Tianjin University of Fin
   <img src="../images/logo/logo_tjufe.png" alt="Guangming Laboratory" style="height: 70px; width: auto; margin: 0;">
   <img src="../images/logo/logo_ppio.png" alt="Tianjin University of Finance" style="height: 70px; width: auto; margin: 0;">
 </div>
-

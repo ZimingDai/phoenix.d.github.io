@@ -1,0 +1,84 @@
+{% include base_path %}
+
+{% assign pub_rank = post.rank | default: "other" | downcase %}
+{% assign pub_year = post.date | default: "1900-01-01" | date: "%Y" %}
+
+<article class="publication-card publication-card--{{ pub_rank }}" itemscope itemtype="http://schema.org/ScholarlyArticle">
+  <a class="publication-card__teaser" href="{{ base_path }}{{ post.url }}" aria-label="{{ post.title }}">
+    {% if post.teaser %}
+      <img src="{{ post.teaser | prepend: "/images/" | prepend: base_path }}" alt="{{ post.title }}">
+    {% else %}
+      <span>{{ post.venue | default: "Paper" | truncate: 12, "" }}</span>
+    {% endif %}
+  </a>
+
+  <div class="publication-card__body">
+    <div class="publication-card__meta">
+      {% if post.rank_label %}
+        <span class="publication-card__rank publication-card__rank--{{ pub_rank }}">{{ post.rank_label }}</span>
+      {% endif %}
+      {% if post.venue %}
+        <span class="publication-card__venue">{{ post.venue }}</span>
+      {% endif %}
+      <span class="publication-card__year">{{ pub_year }}</span>
+    </div>
+
+    <h2 class="publication-card__title" itemprop="headline">
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
+    </h2>
+
+    {% if post.authors %}
+      <p class="publication-card__authors">{{ post.authors }}</p>
+    {% endif %}
+
+    {% if post.highlight %}
+      <p class="publication-card__highlight">{{ post.highlight }}</p>
+    {% elsif post.excerpt %}
+      <p class="publication-card__highlight">{{ post.excerpt | markdownify | strip_html }}</p>
+    {% endif %}
+
+    {% if post.keywords %}
+      <div class="publication-card__keywords" aria-label="Keywords">
+        {% for keyword in post.keywords limit: 3 %}
+          {% assign keyword_downcase = keyword | downcase %}
+          {% assign keyword_domain = "general" %}
+          {% if keyword_downcase contains "llm" or keyword_downcase contains "peft" or keyword_downcase contains "fine-tuning" or keyword_downcase contains "distillation" or keyword_downcase contains "model" %}
+            {% assign keyword_domain = "model" %}
+          {% elsif keyword_downcase contains "federated" or keyword_downcase contains "edge" or keyword_downcase contains "green" or keyword_downcase contains "graph" or keyword_downcase contains "multi-granularity" %}
+            {% assign keyword_domain = "federated" %}
+          {% elsif keyword_downcase contains "distributed" or keyword_downcase contains "cloud" or keyword_downcase contains "deployment" or keyword_downcase contains "systems" or keyword_downcase contains "personalized" %}
+            {% assign keyword_domain = "systems" %}
+          {% elsif keyword_downcase contains "6g" or keyword_downcase contains "resource" or keyword_downcase contains "immersive" %}
+            {% assign keyword_domain = "networking" %}
+          {% elsif keyword_downcase contains "neuro" or keyword_downcase contains "symbolic" or keyword_downcase contains "residual" or keyword_downcase contains "legacy" %}
+            {% assign keyword_domain = "symbolic" %}
+          {% endif %}
+          <span class="publication-card__keyword publication-card__keyword--{{ keyword_domain }}">{{ keyword }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="publication-card__actions">
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" class="publication-card__action">
+          <i class="fas fa-fw fa-file-lines" aria-hidden="true"></i> Paper
+        </a>
+      {% endif %}
+      {% if post.slidesurl %}
+        <a href="{{ post.slidesurl }}" class="publication-card__action">
+          <i class="fas fa-fw fa-display" aria-hidden="true"></i> Slides
+        </a>
+      {% endif %}
+      {% if post.codeurl %}
+        <a href="{{ post.codeurl }}" class="publication-card__action">
+          <i class="fab fa-fw fa-github" aria-hidden="true"></i> Code
+        </a>
+      {% endif %}
+      {% if post.bibtexurl %}
+        <a href="{{ post.bibtexurl }}" class="publication-card__action">
+          <i class="fas fa-fw fa-quote-right" aria-hidden="true"></i> BibTeX
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</article>

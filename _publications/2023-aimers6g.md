@@ -4,8 +4,14 @@ collection: publications
 category: manuscripts
 permalink: /publications/2023-aimers6g
 date: 2023-06-13
+sort_date: 2023-06-13
 excerpt: ''
 venue: 'IEEE Wireless Communications'
+rank: q1
+rank_label: 'JCR Q1'
+authors: 'Chao Qiu, Zheyuan Chen, Xiaoxu Ren, <strong>Ziming Dai</strong>, Cheng Zhang, and Xiaofei Wang'
+highlight: 'An AI-driven resource provisioning approach for 6G immersive services across region-temporal demand.'
+keywords: ['6G Services', 'Resource Provisioning', 'Immersive Computing']
 paperurl: 'https://doi.org/10.1109/MWC.022.2200539'
 citation: 'Qiu Chao, Zheyuan Chen, Xiaoxu Ren, <strong>Ziming Dai</strong>, Cheng Zhang, and Xiaofei Wang. "AImers-6G: AI-driven region-temporal resource provisioning for 6G immersive services." IEEE Wireless Communications 30, no. 3 (2023): 196-203.'
 ---
