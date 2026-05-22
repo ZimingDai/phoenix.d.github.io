@@ -13,6 +13,7 @@ excerpt: ''
 authors: '<strong>Ziming Dai</strong>, Tuo Zhang, Fei Gao, Xingyi Cai, Xiaofei Wang, Cheng Zhang, Wenyu Wang, and Chengjie Zang'
 highlight: 'An end-to-end distillation pipeline for customized LLM deployment under distributed cloud constraints.'
 keywords: ['LLM Distillation', 'Distributed Cloud', 'Model Deployment']
+paperurl: 'https://ojs.aaai.org/index.php/AAAI/article/view/41495'
 citation: '<strong>Ziming Dai</strong>, Tuo Zhang, Fei Gao, Xingyi Cai, Xiaofei Wang, Cheng Zhang, Wenyu Wang, and Chengjie Zang. "Stratos: An End-to-End Distillation Pipeline for Customized LLMs Under Distributed Cloud Environments." In Proceedings of the AAAI Conference on Artificial Intelligence, vol. 40, no. 47, pp. 40506-40512. 2026.'
 ---
 
