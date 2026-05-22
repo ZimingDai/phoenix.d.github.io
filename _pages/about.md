@@ -59,11 +59,11 @@ redirect_from:
 
     <div class="home-experience-item home-experience-item--industry">
       <div class="home-experience-item__mark home-experience-item__mark--logo">
-        <img src="{{ '/images/logo/logo_360.png' | prepend: base_path }}" alt="360 Digital">
+        <img src="{{ '/images/logo/logo_360.png' | prepend: base_path }}" alt="Qfin Holdings (360 DigiTech)">
       </div>
       <div>
         <span class="home-experience-item__date">2025 - 2026</span>
-        <h3>360 Digital</h3>
+        <h3>Qfin Holdings (360 DigiTech)</h3>
         <p>NLP Engineer Intern, working on industrial language models and model enhancement.</p>
       </div>
     </div>
@@ -115,7 +115,7 @@ redirect_from:
     {% assign homepage_publications = site.publications | sort: "sort_date" | reverse %}
     {% assign selected_count = 0 %}
     {% for post in homepage_publications %}
-      {% if post.rank == "a" and selected_count < 3 %}
+      {% if post.rank == "a" and post.venue != "AAAI" and selected_count < 3 %}
         {% assign selected_count = selected_count | plus: 1 %}
         <a class="home-publication home-publication--a" href="{{ post.url | prepend: base_path }}">
           <span class="home-publication__meta">
