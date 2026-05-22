@@ -52,6 +52,8 @@
             {% assign keyword_domain = "networking" %}
           {% elsif keyword_downcase contains "neuro" or keyword_downcase contains "symbolic" or keyword_downcase contains "residual" or keyword_downcase contains "legacy" %}
             {% assign keyword_domain = "symbolic" %}
+          {% elsif keyword_downcase contains "poisson" or keyword_downcase contains "sampling" or keyword_downcase contains "circle" or keyword_downcase contains "blue noise" or keyword_downcase contains "graphics" %}
+            {% assign keyword_domain = "graphics" %}
           {% endif %}
           <span class="publication-card__keyword publication-card__keyword--{{ keyword_domain }}">{{ keyword }}</span>
         {% endfor %}

@@ -28,7 +28,8 @@
 }
 
 .publication-card--a,
-.publication-card--q1 {
+.publication-card--q1,
+.publication-card--q2 {
   box-shadow: 0 6px 18px rgba(129, 59, 38, 0.12);
 }
 
@@ -38,6 +39,10 @@
 
 .publication-card--q1 {
   border-left-color: #b7791f;
+}
+
+.publication-card--q2 {
+  border-left-color: #8a6f35;
 }
 
 .publication-card--b {
@@ -113,6 +118,10 @@
 
 .publication-card__rank--q1 {
   background: #b7791f;
+}
+
+.publication-card__rank--q2 {
+  background: #8a6f35;
 }
 
 .publication-card__rank--b {
@@ -220,6 +229,12 @@
   border: 1px solid #e3d1ca;
   background: #fbf4f1;
   color: #6a4b43;
+}
+
+.publication-card__keyword--graphics {
+  border: 1px solid #d4d8c8;
+  background: #f7f8f0;
+  color: #565f42;
 }
 
 .publication-card__keyword--general {
