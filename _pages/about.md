@@ -53,7 +53,7 @@ redirect_from:
       <div>
         <span class="home-experience-item__date">2026 - Present</span>
         <h3>City University of Hong Kong</h3>
-        <p>Ph.D. Student, advised by <a href="https://zhouzimu.github.io/">Prof. Zimu Zhou</a>.</p>
+        <p>Ph.D. Student in Data Science, advised by <a href="https://zhouzimu.github.io/">Prof. Zimu Zhou</a>.</p>
       </div>
     </div>
 
@@ -97,7 +97,7 @@ redirect_from:
       <div>
         <span class="home-experience-item__date">2019 - 2023</span>
         <h3>Tianjin University</h3>
-        <p>B.Eng. in Artificial Intelligence.</p>
+        <p>B.Eng. in Artificial Intelligence. Awarded Outstanding Undergraduate Thesis.</p>
       </div>
     </div>
   </div>
