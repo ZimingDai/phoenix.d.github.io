@@ -137,4 +137,36 @@ redirect_from:
   </p>
 </section>
 
+<section class="home-section home-gallery-section">
+  <div class="home-section__header">
+    <h2>Gallery</h2>
+  </div>
+
+  {% assign gallery_photos = site.static_files | sort: "path" %}
+  <div class="home-gallery" aria-label="Photo gallery">
+    <div class="home-gallery__track">
+      {% for image in gallery_photos %}
+        {% assign image_ext = image.extname | downcase %}
+        {% if image.path contains '/images/gallery/' %}
+          {% if image_ext == '.jpg' or image_ext == '.jpeg' or image_ext == '.png' or image_ext == '.webp' %}
+            <figure class="home-gallery__item">
+              <img src="{{ image.path | prepend: base_path }}" alt="Gallery photo" loading="lazy">
+            </figure>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      {% for image in gallery_photos %}
+        {% assign image_ext = image.extname | downcase %}
+        {% if image.path contains '/images/gallery/' %}
+          {% if image_ext == '.jpg' or image_ext == '.jpeg' or image_ext == '.png' or image_ext == '.webp' %}
+            <figure class="home-gallery__item" aria-hidden="true">
+              <img src="{{ image.path | prepend: base_path }}" alt="" loading="lazy">
+            </figure>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 </div>

@@ -8,7 +8,7 @@ sort_date: 2026-04-01
 venue: 'Computers & Graphics'
 rank: q2
 rank_label: 'JCR Q2'
-teaser: 'poisson-circle-packing.jpg'
+teaser: 'publications/poisson-circle-packing.jpg'
 excerpt: ''
 authors: 'Jun Cui, Zeyu Li, Yuxiao Li, Ziheng Guo, <strong>Ziming Dai</strong>, and Jiawan Zhang'
 highlight: 'A single-pass Poisson-disk sampling method via circle packing for efficient blue-noise sample generation.'
@@ -17,7 +17,7 @@ paperurl: 'https://doi.org/10.1016/j.cag.2026.104548'
 citation: 'Jun Cui, Zeyu Li, Yuxiao Li, Ziheng Guo, <strong>Ziming Dai</strong>, and Jiawan Zhang. "Single pass Poisson disk sampling via circle packing." Computers & Graphics 135 (2026): 104548.'
 ---
 
-<img src="../images/poisson-circle-packing.jpg" alt="Pipeline of the proposed Poisson-disk sampling method via circle packing." style="max-width: 100%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<img src="../images/publications/poisson-circle-packing.jpg" alt="Pipeline of the proposed Poisson-disk sampling method via circle packing." style="max-width: 100%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 
 ### ✨ Proposed Method
 This paper proposes a **spatial covering model based on constrained cells** for Poisson-disk sampling. The model maintains both minimum distance and maximal coverage properties within local cells, then constructs the sample distribution in a single-pass manner. Guided by this geometric model, the method uses circle packing to generate high-quality blue-noise samples efficiently while allowing a controllable trade-off between noise and aliasing.

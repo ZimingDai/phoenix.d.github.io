@@ -8,7 +8,7 @@ sort_date: 2026-08-09
 venue: 'SIGKDD'
 rank: a
 rank_label: 'CCF-A'
-teaser: 'nsrboost.png'
+teaser: 'publications/nsrboost.png'
 excerpt: ''
 authors: '<strong>Ziming Dai</strong>, Dabiao Ma, Jinle Tong, Mengyuan Han, Jian Yang, Hongtao Liu, Haojun Fei, and Qing Yang'
 highlight: 'A neuro-symbolic residual boosting framework for upgrading industrial legacy models without full retraining.'
@@ -17,7 +17,7 @@ paperurl: 'https://arxiv.org/abs/2601.10457'
 citation: '<strong>Ziming Dai</strong>, Dabiao Ma, Jinle Tong, Mengyuan Han, Jian Yang, Hongtao Liu, Haojun Fei, and Qing Yang. "NSR-Boost: A Neuro-Symbolic Residual Boosting Framework for Industrial Legacy Models." Accepted by the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (SIGKDD 2026).'
 ---
 
-<img src="../images/nsrboost.png" alt="Overview of the NSR-Boost neuro-symbolic residual boosting framework." style="max-width: 100%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<img src="../images/publications/nsrboost.png" alt="Overview of the NSR-Boost neuro-symbolic residual boosting framework." style="max-width: 100%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 
 
 ### ✨ Proposed Method

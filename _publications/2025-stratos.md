@@ -8,7 +8,7 @@ sort_date: 2026-01-20
 venue: 'AAAI'
 rank: a
 rank_label: 'CCF-A'
-teaser: 'stratos.png'
+teaser: 'publications/stratos.png'
 excerpt: ''
 authors: '<strong>Ziming Dai</strong>, Tuo Zhang, Fei Gao, Xingyi Cai, Xiaofei Wang, Cheng Zhang, Wenyu Wang, and Chengjie Zang'
 highlight: 'An end-to-end distillation pipeline for customized LLM deployment under distributed cloud constraints.'
@@ -17,7 +17,7 @@ paperurl: 'https://ojs.aaai.org/index.php/AAAI/article/view/41495'
 citation: '<strong>Ziming Dai</strong>, Tuo Zhang, Fei Gao, Xingyi Cai, Xiaofei Wang, Cheng Zhang, Wenyu Wang, and Chengjie Zang. "Stratos: An End-to-End Distillation Pipeline for Customized LLMs Under Distributed Cloud Environments." In Proceedings of the AAAI Conference on Artificial Intelligence, vol. 40, no. 47, pp. 40506-40512. 2026.'
 ---
 
-<img src="../images/stratos.png" alt="System overview of the proposed end-to-end distillation pipeline." style="max-width: 90%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<img src="../images/publications/stratos.png" alt="System overview of the proposed end-to-end distillation pipeline." style="max-width: 90%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 
 ### ✨ Proposed Method
 This paper introduces **Stratos**, an end-to-end Large Language Model (LLM) distillation pipeline designed to automate server/model selection, knowledge distillation, and deployment in distributed cloud environments. To optimize cloud hosting under user-defined budget and latency constraints, Stratos automatically selects Pareto-optimal servers and dynamically matches teacher-student model pairs. Furthermore, it features an adaptive dual-mode knowledge distillation framework that intelligently switches between "Knowledge Alignment" and "Knowledge Injection" based on the task's complexity and the teacher model's domain coverage.

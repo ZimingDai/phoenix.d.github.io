@@ -8,7 +8,7 @@ sort_date: 2026-08-15
 venue: 'IJCAI-ECAI'
 rank: a
 rank_label: 'CCF-A'
-teaser: 'tspeft.png'
+teaser: 'publications/tspeft.png'
 excerpt: ''
 authors: 'Dabiao Ma<sup>*</sup>, <strong>Ziming Dai</strong><sup>*</sup>, Zhimin Xin, Shu Wang, Jian Yang, and Haojun Fei'
 highlight: 'A token-level sparsity perspective for reducing redundant updates in parameter-efficient fine-tuning.'
@@ -17,7 +17,7 @@ paperurl: 'https://arxiv.org/abs/2511.16147'
 citation: '<u>Dabiao Ma</u>, <u><strong>Ziming Dai</strong></u>, Zhimin Xin, Shu Wang, Jian Yang, and Haojun Fei. "TS-PEFT: Unveiling Token-Level Redundancy in Parameter-Efficient Fine-Tuning." In the 35th International Joint Conference on Artificial Intelligence. 2026.'
 ---
 
-<img src="../images/tspeft.png" alt="Comparison between standard PEFT and our TS-PEFT framework." style="max-width: 100%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<img src="../images/publications/tspeft.png" alt="Comparison between standard PEFT and our TS-PEFT framework." style="max-width: 100%; display: block; margin: 20px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
 ### ✨ Proposed Method
 This paper introduces **TS-PEFT**, a theoretical framework utilizing proximal optimization that acts as a dynamic probe to identify token-level redundancy during the fine-tuning process of large models. Current Parameter-Efficient Fine-Tuning (PEFT) methods typically operate under the assumption that every token passing through a selected target module contributes equally and requires a parameter update. TS-PEFT challenges this convention by dynamically identifying and removing unnecessary token updates to optimize the adaptation mechanism.
 
