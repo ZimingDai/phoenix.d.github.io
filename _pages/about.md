@@ -45,59 +45,67 @@ redirect_from:
     <h2>Experience</h2>
   </div>
 
-  <div class="home-experience-grid">
-    <div class="home-experience-item home-experience-item--education">
-      <div class="home-experience-item__mark home-experience-item__mark--logo">
-        <img src="{{ '/images/logo/logo_cityu.png' | prepend: base_path }}" alt="City University of Hong Kong">
+  <div class="home-experience-group">
+    <h3 class="home-experience-group__title">Academic Experience</h3>
+    <div class="home-experience-grid">
+      <div class="home-experience-item home-experience-item--education">
+        <div class="home-experience-item__mark home-experience-item__mark--logo">
+          <img src="{{ '/images/logo/logo_cityu.png' | prepend: base_path }}" alt="City University of Hong Kong">
+        </div>
+        <div>
+          <span class="home-experience-item__date">2026 - Present</span>
+          <h3>City University of Hong Kong</h3>
+          <p>Ph.D. Student in Data Science, advised by <a href="https://zhouzimu.github.io/">Prof. Zimu Zhou</a>.</p>
+        </div>
       </div>
-      <div>
-        <span class="home-experience-item__date">2026 - Present</span>
-        <h3>City University of Hong Kong</h3>
-        <p>Ph.D. Student in Data Science, advised by <a href="https://zhouzimu.github.io/">Prof. Zimu Zhou</a>.</p>
+
+      <div class="home-experience-item home-experience-item--education">
+        <div class="home-experience-item__mark home-experience-item__mark--logo">
+          <img src="{{ '/images/logo/logo_tju.png' | prepend: base_path }}" alt="Tianjin University">
+        </div>
+        <div>
+          <span class="home-experience-item__date">2023 - 2026</span>
+          <h3>Tianjin University</h3>
+          <p>M.Eng. in Computer Technology at <a href="http://www.drxiaofei.wang/">Edge Big Bang Lab</a>, advised by <a href="http://qiuchao.fei8s.com/">Prof. Chao Qiu</a> and <a href="https://cic.tju.edu.cn/faculty/wangxiaofei/index.html">Prof. Xiaofei Wang</a>.</p>
+        </div>
+      </div>
+
+      <div class="home-experience-item home-experience-item--education">
+        <div class="home-experience-item__mark home-experience-item__mark--logo">
+          <img src="{{ '/images/logo/logo_tju.png' | prepend: base_path }}" alt="Tianjin University">
+        </div>
+        <div>
+          <span class="home-experience-item__date">2019 - 2023</span>
+          <h3>Tianjin University</h3>
+          <p>B.Eng. in Artificial Intelligence. Awarded Outstanding Undergraduate Thesis.</p>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="home-experience-item home-experience-item--industry">
-      <div class="home-experience-item__mark home-experience-item__mark--logo">
-        <img src="{{ '/images/logo/logo_360.png' | prepend: base_path }}" alt="Qfin Holdings (360 DigiTech)">
+  <div class="home-experience-group">
+    <h3 class="home-experience-group__title">Internship Experience</h3>
+    <div class="home-experience-grid">
+      <div class="home-experience-item home-experience-item--industry">
+        <div class="home-experience-item__mark home-experience-item__mark--logo">
+          <img src="{{ '/images/logo/logo_360.png' | prepend: base_path }}" alt="Qfin Holdings (360 DigiTech)">
+        </div>
+        <div>
+          <span class="home-experience-item__date">2025 - 2026</span>
+          <h3>Qfin Holdings (360 DigiTech)</h3>
+          <p>NLP Engineer Intern, working on industrial language models and model enhancement.</p>
+        </div>
       </div>
-      <div>
-        <span class="home-experience-item__date">2025 - 2026</span>
-        <h3>Qfin Holdings (360 DigiTech)</h3>
-        <p>NLP Engineer Intern, working on industrial language models and model enhancement.</p>
-      </div>
-    </div>
 
-    <div class="home-experience-item home-experience-item--education">
-      <div class="home-experience-item__mark home-experience-item__mark--logo">
-        <img src="{{ '/images/logo/logo_tju.png' | prepend: base_path }}" alt="Tianjin University">
-      </div>
-      <div>
-        <span class="home-experience-item__date">2023 - 2026</span>
-        <h3>Tianjin University</h3>
-        <p>M.Eng. in Computer Technology at <a href="http://www.drxiaofei.wang/">Edge Big Bang Lab</a>, advised by <a href="http://qiuchao.fei8s.com/">Prof. Chao Qiu</a> and <a href="https://cic.tju.edu.cn/faculty/wangxiaofei/index.html">Prof. Xiaofei Wang</a>.</p>
-      </div>
-    </div>
-
-    <div class="home-experience-item home-experience-item--industry">
-      <div class="home-experience-item__mark home-experience-item__mark--logo">
-        <img src="{{ '/images/logo/logo_wenge.png' | prepend: base_path }}" alt="Beijing Wenge Technology">
-      </div>
-      <div>
-        <span class="home-experience-item__date">2022</span>
-        <h3>Beijing Wenge Technology</h3>
-        <p>Algorithm Engineer Intern, focusing on named entity recognition for low-resource languages.</p>
-      </div>
-    </div>
-
-    <div class="home-experience-item home-experience-item--education">
-      <div class="home-experience-item__mark home-experience-item__mark--logo">
-        <img src="{{ '/images/logo/logo_tju.png' | prepend: base_path }}" alt="Tianjin University">
-      </div>
-      <div>
-        <span class="home-experience-item__date">2019 - 2023</span>
-        <h3>Tianjin University</h3>
-        <p>B.Eng. in Artificial Intelligence. Awarded Outstanding Undergraduate Thesis.</p>
+      <div class="home-experience-item home-experience-item--industry">
+        <div class="home-experience-item__mark home-experience-item__mark--logo">
+          <img src="{{ '/images/logo/logo_wenge.png' | prepend: base_path }}" alt="Beijing Wenge Technology">
+        </div>
+        <div>
+          <span class="home-experience-item__date">2022</span>
+          <h3>Beijing Wenge Technology</h3>
+          <p>Algorithm Engineer Intern, focusing on named entity recognition for low-resource languages.</p>
+        </div>
       </div>
     </div>
   </div>
