@@ -99,6 +99,17 @@ redirect_from:
 
       <div class="home-experience-item home-experience-item--industry">
         <div class="home-experience-item__mark home-experience-item__mark--logo">
+          <img src="{{ '/images/logo/logo_ppio.png' | prepend: base_path }}" alt="Paiou Cloud Computing (Shanghai)">
+        </div>
+        <div>
+          <span class="home-experience-item__date">2024.12 - 2025.04</span>
+          <h3>Paiou Cloud Computing (Shanghai)</h3>
+          <p>Algorithm Engineer Intern, working on model algorithms and applied AI systems.</p>
+        </div>
+      </div>
+
+      <div class="home-experience-item home-experience-item--industry">
+        <div class="home-experience-item__mark home-experience-item__mark--logo">
           <img src="{{ '/images/logo/logo_wenge.png' | prepend: base_path }}" alt="Beijing Wenge Technology">
         </div>
         <div>
