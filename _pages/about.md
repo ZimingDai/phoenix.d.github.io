@@ -91,7 +91,7 @@ redirect_from:
           <img src="{{ '/images/logo/logo_360.png' | prepend: base_path }}" alt="Qfin Holdings (360 DigiTech)">
         </div>
         <div>
-          <span class="home-experience-item__date">2025 - 2026</span>
+          <span class="home-experience-item__date">2025.09 - 2026.04</span>
           <h3>Qfin Holdings (360 DigiTech)</h3>
           <p>NLP Engineer Intern, working on industrial language models and model enhancement.</p>
         </div>
@@ -113,7 +113,7 @@ redirect_from:
           <img src="{{ '/images/logo/logo_wenge.png' | prepend: base_path }}" alt="Beijing Wenge Technology">
         </div>
         <div>
-          <span class="home-experience-item__date">2022</span>
+          <span class="home-experience-item__date">2022.05 - 2022.06</span>
           <h3>Beijing Wenge Technology</h3>
           <p>Algorithm Engineer Intern, focusing on named entity recognition for low-resource languages.</p>
         </div>
