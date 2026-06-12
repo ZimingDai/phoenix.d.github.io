@@ -13,17 +13,17 @@ redirect_from:
 <div class="home-page">
 
 <section class="home-hero">
-  <p class="home-hero__eyebrow">Federated Learning · Edge Intelligence · LLM Personalization</p>
+  <p class="home-hero__eyebrow">Efficient AI Systems · Edge Intelligence · LLM Adaptation</p>
   <h1>Ziming (Phoenix) Dai</h1>
   <p class="home-hero__role">Ph.D. Student, City University of Hong Kong</p>
   <p class="home-hero__lead">
-    I work on personalized and deployable AI systems, with a focus on federated learning, edge intelligence, and large language model adaptation under privacy, latency, and resource constraints.
+    I work on efficient, adaptive, and deployable AI systems, with a focus on federated and edge intelligence, large model customization, and industrial model enhancement under privacy, latency, and resource constraints.
   </p>
   <div class="home-tag-list">
-    <span>Federated Learning</span>
-    <span>Edge Intelligence</span>
-    <span>LLM Personalization</span>
+    <span>Federated &amp; Edge Intelligence</span>
+    <span>LLM Adaptation</span>
     <span>Efficient Deployment</span>
+    <span>Industrial AI Systems</span>
   </div>
   <div class="home-hero__actions">
     <a href="{{ '/publications/' | prepend: base_path }}" class="home-button home-button--primary">Publications</a>
@@ -35,7 +35,7 @@ redirect_from:
   <div class="home-section__header">
     <h2>Current Focus</h2>
     <p>
-      My current research explores how intelligent models can adapt to local contexts while remaining efficient, private, and practical for real-world edge and distributed environments.
+      My current research explores how AI models can be customized, compressed, and upgraded for real-world distributed and industrial environments while remaining efficient, robust, and practical under privacy, latency, and resource constraints.
     </p>
   </div>
 </section>
